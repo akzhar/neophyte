@@ -1,0 +1,20 @@
+@font-face {
+  font-weight: normal;
+  font-family: "Roboto";
+  font-style: normal;
+  src: url("../fonts/Roboto-Regular.ttf") format("ttf");
+}
+
+img {
+  max-width: 100%;
+}
+
+@import "variables.scss";
+
+@import "body.scss";
+
+@import "main-logo.scss";
+
+@import "navigation.scss";
+
+@import "social.scss";

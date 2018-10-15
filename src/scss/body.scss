@@ -1,0 +1,13 @@
+.body {
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.body--index {
+  position: relative;
+
+  background-color: $index-back;
+  background-image: url("../img/index-back.jpg");
+  background-repeat: no-repeat;
+  // background-position-x: 50%;
+  // background-attachment: fixed;
+}
