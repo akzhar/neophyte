@@ -1,10 +1,10 @@
-var menubutton = document.querySelector(".menu-button");
-var menu = document.querySelector(".menu-list");
+var menubutton = document.querySelector(".header__menu-button");
+var menu = document.querySelector(".menu");
 
-menu.classList.remove("menu-list--nojs");
+menu.classList.remove("menu--nojs");
 
 menubutton.addEventListener("click", function(evt) {
   evt.preventDefault();
-  menu.classList.toggle("menu-list--open");
-  menubutton.classList.toggle("menu-button--menu-open");
+  menu.classList.toggle("menu--open");
+  menubutton.classList.toggle("header__menu-button--open");
 });

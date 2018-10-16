@@ -1,8 +1,9 @@
-@font-face {
+@font-face { //локальное подключение шрифтов
   font-weight: normal;
   font-family: "Roboto";
   font-style: normal;
-  src: url("../fonts/Roboto-Regular.ttf") format("ttf");
+  src: url("../fonts/Roboto-Regular.ttf") format("ttf"),
+  url("../fonts/Roboto-Bold.ttf") format("ttf");
 }
 
 img {
@@ -18,3 +19,7 @@ img {
 @import "navigation/navigation.scss";
 
 @import "social/social.scss";
+
+@import "header/header.scss";
+
+@import "menu/menu.scss";

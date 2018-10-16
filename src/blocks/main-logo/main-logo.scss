@@ -1,12 +1,17 @@
-.main-logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.main-logo { //логотип на стартовой странице
+  position: relative;
 
+  display: block;
+  min-height: 250px;
   margin: 0 auto;
+  margin-top: 150px;
 
   & svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
     fill: $white;
   }
 
@@ -20,19 +25,19 @@
   }
 }
 
-@media (min-width: $width-1) {
+@media (min-width: $width-1) { //если viewport шире width-1, то ширина svg
   .main-logo svg {
     width: 500px;
   }
 }
 
-@media (min-width: $width-2) {
+@media (min-width: $width-2) { //если viewport шире width-2, то ширина svg
   .main-logo svg {
     width: 700px;
   }
 }
 
-@media (min-width: $width-3) {
+@media (min-width: $width-3) { //если viewport шире width-3, то ширина svg
   .main-logo svg {
     width: 900px;
   }
