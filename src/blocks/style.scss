@@ -9,12 +9,12 @@ img {
   max-width: 100%;
 }
 
-@import "variables.scss";
+@import "variables/variables.scss";
 
-@import "body.scss";
+@import "body/body.scss";
 
-@import "main-logo.scss";
+@import "main-logo/main-logo.scss";
 
-@import "navigation.scss";
+@import "navigation/navigation.scss";
 
-@import "social.scss";
+@import "social/social.scss";

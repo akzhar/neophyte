@@ -26,15 +26,15 @@ var path = {
         image: "build/img/"
     },
     source: { //пути откуда брать исходники для сборки
-        html: "src/html/**/index.html", //синтаксис /{index,catalog,form}.html означает - берем файлы с именем index,catalog,form с расширением .html
-        style: "src/scss/**/style.scss", //в стилях нам понадобится только main файл
+        html: "src/blocks/*.html", //синтаксис /{index,catalog,form}.html означает - берем файлы с именем index,catalog,form с расширением .html
+        style: "src/blocks/*.{scss, sass}", //в стилях нам понадобится только main файл
         fonts: "src/fonts/*.*",
         js: "src/js/**/script.js", //в криптах нам тоже понадобится только main файл
         image: "src/img/**/*.*" //синтаксис img/**/*.* означает - взять все файлы всех расширений из папки img и из подпапок
     },
     watch: { //указываем, за изменением каких файлов мы хотим наблюдать
-        html: "src/html/**/*.html",
-        style: "src/scss/**/*.{scss,sass}",
+        html: "src/blocks/**/*.html",
+        style: "src/blocks/**/*.{scss, sass}",
         js: "src/js/**/*.js",
         image: "src/img/**/*.*"
     },
@@ -113,7 +113,7 @@ gulp.task('clean', function (cb) { //задача - вызывается как 
     rimraf(path.clean, cb); //удаление папки build (предыдущая сборка)
 });
 
-gulp.task ("start",["style:build", "image:build", "js:build", "html:build", "watch"], function() { //задача - вызывается как скрипт из package.json
+gulp.task ("start",["style:build", "fonts:build", "image:build", "js:build", "html:build", "watch"], function() { //задача - вызывается как скрипт из package.json
     server.init({ //вызывается задача build и затем готовая сборка запускается в браузере
       server:"build", //где лежит собранный файл index.html
       notify: false,

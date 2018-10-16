@@ -1,0 +1,39 @@
+.main-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  margin: 0 auto;
+
+  & svg {
+    fill: $white;
+  }
+
+  &:hover svg {
+    cursor: pointer;
+    filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3));
+  }
+
+  &:active svg {
+    opacity: 0.6;
+  }
+}
+
+@media (min-width: $width-1) {
+  .main-logo svg {
+    width: 500px;
+  }
+}
+
+@media (min-width: $width-2) {
+  .main-logo svg {
+    width: 700px;
+  }
+}
+
+@media (min-width: $width-3) {
+  .main-logo svg {
+    width: 900px;
+  }
+}
