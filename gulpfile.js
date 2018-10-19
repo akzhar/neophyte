@@ -19,11 +19,11 @@ devip(); // [ "192.168.1.76", "192.168.1.80" ] or false if nothing found (ie, of
 
 var path = {
     build: { //пути куда складывать готовые после сборки файлы
-        html: "build/",
-        style: "build/css/",
-        js: "build/js/",
-        fonts: "build/fonts/",
-        image: "build/img/"
+        html: "docs/",
+        style: "docs/css/",
+        js: "docs/js/",
+        fonts: "docs/fonts/",
+        image: "docs/img/"
     },
     source: { //пути откуда брать исходники для сборки
         html: "src/blocks/*.html", //синтаксис /{index,catalog,form}.html означает - берем файлы с именем index,catalog,form с расширением .html
@@ -38,7 +38,7 @@ var path = {
         js: "src/js/**/*.js",
         image: "src/img/**/*.*"
     },
-    clean: "build" //адрес папки build
+    clean: "docs" //адрес папки build
 };
 
 gulp.task("fonts:build", function () { //задача - вызывается как скрипт из package.json
@@ -115,7 +115,7 @@ gulp.task('clean', function (cb) { //задача - вызывается как 
 
 gulp.task ("start",["style:build", "fonts:build", "image:build", "js:build", "html:build", "watch"], function() { //задача - вызывается как скрипт из package.json
     server.init({ //вызывается задача build и затем готовая сборка запускается в браузере
-      server:"build", //где лежит собранный файл index.html
+      server:"docs", //адрес к папке где лежит собранный файл index.html
       notify: false,
       open: true,
       cors: true,

@@ -4,26 +4,32 @@
 }
 
 .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   width: $width-0;
   margin: 0 auto;
 }
 
 .footer .navigation-list {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 
   min-width: auto; //в index задана мин ширина
 
   margin: 0; //было 0 auto для центровки
 }
 
-.footer .social-btn { //кнопки соцсетей
-  margin-top: 0;
-}
-
 .footer .navigation-list__item {
+  width: 100px;
+
   text-align: center;
   padding: 10px 0;
+}
+
+.footer .social-btn { //кнопки соцсетей
+  margin-top: 0; //в index стоит отступ
 }
 
 .footer--newspage .navigation-list__link--news { //на странице news у элемента news
@@ -35,10 +41,6 @@
 
 @media (min-width: $width-1) {
 .footer {
-  display: flex; //был block, т.к. меню появлялось под header-logo
-  justify-content: space-between;
-  align-items: center;
-
   width: 600px; //-40
   }
 }
