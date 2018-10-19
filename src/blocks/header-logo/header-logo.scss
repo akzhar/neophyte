@@ -1,0 +1,85 @@
+.header-logo {
+  padding: 20px 0; //чтобы не прилипало к верхнему и нижнему краю
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo__logo {
+
+  & svg {
+    fill: $white;
+  }
+
+  &:hover svg {
+    filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3));
+  }
+
+  &:active svg {
+    opacity: 0.6;
+  }
+}
+
+.header-logo__menu-button { //кнопка открытия меню
+  position: relative;
+
+  width: 60px; //размеры кнопки открытия меню
+  height: 60px;
+
+  padding: 0;
+
+  border: none;
+
+  background-color: transparent;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &::before, //иконка бургера
+  &::after {
+    position: absolute;
+    left: 50%;
+
+    width: 30px; //размеры полосок бургера
+    height: 2px;
+    background-color: $white;
+
+    content: "";
+
+    transform: translate(-50%, 0); //центруется
+  }
+
+  &::before { //верхняя полоска бургера
+    top: 18px; //отступ сверху
+    box-shadow: 0px 11px 0px 0px $white; //3ая средняя полоска бургера
+  }
+
+  &::after { //нижняя полоска бургера
+    bottom: 18px; //отступ снизу
+  }
+}
+
+.header-logo__menu-button--open { //кнопка открытия меню когда меню открыто
+
+  &::before { //верхняя полоска бургера
+    top: 29px; //смещается вниз
+    transform: translate(-50%, 0) rotate(-45deg); //центруется и поворачивается
+    transition: 0.5s; //плавно
+
+    box-shadow: none; //3ая средняя полоска исчезает
+  }
+
+  &::after { //нижняя полоска бургера
+    bottom: 29px; //смещается вверх
+    transform: translate(-50%, 0) rotate(45deg); //центруется и поворачивается
+    transition: 0.5s; //плавно
+  }
+}
+
+@media (min-width: $width-1) { //если viewport шире width-1
+  .header-logo__menu-button {
+    display: none;
+  }
+}

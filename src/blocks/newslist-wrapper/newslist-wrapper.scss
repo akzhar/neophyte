@@ -1,0 +1,6 @@
+.newslist-wrapper { //обертка чисто для фона
+  background-color: $back; //если img потеряется
+  background-image: url("../img/back.jpg");
+  // background-repeat: no-repeat;
+  background-position-x: 20%;
+}

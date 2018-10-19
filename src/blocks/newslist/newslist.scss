@@ -1,0 +1,65 @@
+.newslist {
+  width: $width-0;
+  margin: 0 auto;
+}
+
+.newslist__list {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 10px; //чтобы отступ последней новости не вываливался за контейнер
+
+  list-style: none;
+}
+
+.newslist__item {
+  width: 280px;
+  margin: 0 auto 50px auto;
+
+  border: 1px solid $border;
+
+  background-color: $back;
+}
+
+.newslist__img {
+  margin: 15px auto; //отступы у изображения
+}
+
+.newslist__description { //обертка для даты, заголовка и текста
+  margin: 15px;
+
+  color: $white;
+
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.newslist__time {
+  display: block;
+  margin-bottom: 5px;
+
+  color: $red;
+}
+
+.newslist__header {
+  margin: 0 0 10px 0;
+
+  font-size: 16px;
+
+  text-transform: uppercase;
+}
+
+.newslist__text {
+  margin: 0;
+}
+
+@media (min-width: $width-1) {
+  .newslist {
+    width: 600px; //-40
+  }
+
+  .newslist__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}

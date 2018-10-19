@@ -16,10 +16,18 @@ img {
 
 @import "main-logo/main-logo.scss";
 
-@import "navigation/navigation.scss";
+@import "navigation-list/navigation-list.scss";
 
-@import "social/social.scss";
+@import "social-btn/social-btn.scss";
 
 @import "header/header.scss";
 
-@import "menu/menu.scss";
+@import "header-logo/header-logo.scss";
+
+@import "newslist-wrapper/newslist-wrapper.scss";
+
+@import "newslist/newslist.scss";
+
+@import "section-header/section-header.scss";
+
+@import "footer/footer.scss";

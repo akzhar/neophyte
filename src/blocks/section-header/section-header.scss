@@ -1,0 +1,46 @@
+.section-header {
+  position: relative;
+
+  margin: 0;
+  padding: 16px 0;
+
+  color: $white;
+
+  font-size: 32px;
+  line-height: 32px;
+
+  text-transform: uppercase;
+  text-align: center;
+
+  &::before, //красные линии
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+
+    width: 50px; //размеры красных линий
+    height: 2px;
+
+    background-color: $red;
+  }
+
+  &::before {
+    right: 0;
+  }
+
+  &::after {
+    left: 0;
+  }
+}
+
+@media (min-width: $width-1) {
+  .section-header {
+
+   &::before,
+   &::after {
+    width: 200px;
+   }
+ }
+}

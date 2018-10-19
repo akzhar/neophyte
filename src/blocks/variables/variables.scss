@@ -1,9 +1,13 @@
 // переменные цветов
-$index-back: #111217;
+$back: #111217;
 $white: #c6d2de;
-$red: #ea0000;
+$red: rgba(234, 0, 0, 0.8);
+$border: #cccccc;
 
 // переменные ширин
-$width-1: 625px;
-$width-2: 825px;
-$width-3: 1025px;
+$width-0: 320px;
+$width-1: 640px;
+$width-2: 1040px;
+
+$tablet-width: 768px;
+$desktop-width: 1440px;

@@ -1,68 +1,100 @@
+.header-wrapper {
+  background-color: $back; //чтобы не создавать новый эл-т
+}
+
+@-webkit-keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
 .header {
+  width: $width-0;
+  margin: 0 auto;
+}
+
+.header .navigation-list { //только для навигации внутри header
+  display: none; // в мобилке меню в шапке по умолчанию скрыто
+  margin-top: 0; //в indexe задан 150px
+}
+
+.header .navigation-list--nojs, //если потерялся js
+.header .navigation-list--open { //открытое меню
   display: flex;
+  flex-direction: column;
+}
+
+.header .navigation-list--open { //анимация при открытии меню
+  animation-name: slideInDown, fadeIn;
+  animation-duration: 0.3s, 1s;
+}
+
+.header .navigation-list__item {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.header--newspage .navigation-list__link--news { //на странице news у элемента news
+  pointer-events: none; //отключаем событие клика
+  cursor: default; //курсор обычный при наведении
+
+  border-bottom: 2px solid $red;
+}
+
+@media (min-width: $width-1) {
+.header {
+  display: flex; //был block, т.к. меню появлялось под header-logo
   justify-content: space-between;
   align-items: center;
-  background-color: $index-back;
-}
 
-.header__logo { //логотип в шапке
-  display: block;
-
-  width: 91px;
-  height: 100px;
-
-  background-image: url("../img/logo.jpg");
-}
-
-.header__menu-button { //кнопка открытия меню
-  position: relative;
-
-  width: 60px;
-  height: 60px;
-
-  padding: 0;
-  border: none;
-
-  background-color: transparent;
-
-  &:hover {
-    cursor: pointer;
+  width: 600px; //-40
   }
 
-  &::before,
-  &::after {
-    position: absolute;
-    left: 50%;
+.header .navigation-list { //меню в шапке по умолчанию скрыто
+  display: flex; //было none
+  flex-direction: row; //элементы меню в ряд
 
-    width: 30px;
-    height: 2px;
-    background-color: $white;
+  min-width: auto; //в index задана мин ширина
 
-    content: "";
-
-    transform: translate(-50%, 0);
-  }
-
-  &::before {
-    top: 18px;
-    box-shadow: 0px 11px 0px 0px $white;
-  }
-
-  &::after {
-    bottom: 18px;
-  }
-}
-
-.header__menu-button--open { //кнопка открытия когда меню открыто
-
-  &::before {
-    top: 29px;
-    box-shadow: none;
-    transform: translate(-50%, 0) rotate(-45deg);
-  }
-
-  &::after {
-    bottom: 29px;
-    transform: translate(-50%, 0) rotate(45deg);
+  margin: 0; //было 0 auto для центровки
   }
 }

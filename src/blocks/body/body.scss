@@ -5,8 +5,8 @@
 .body--index { //фон стартовой страницы
   position: relative;
 
-  background-color: $index-back;
-  background-image: url("../img/index-back.jpg");
+  background-color: $back; //если вдруг изображение потеряется
+  background-image: url("../img/back.jpg");
   background-repeat: no-repeat;
   background-position-x: 20%;
   // background-attachment: fixed;

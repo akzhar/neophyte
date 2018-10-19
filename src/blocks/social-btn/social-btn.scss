@@ -1,8 +1,8 @@
-.social { //кнопки соцсетей
+.social-btn { //кнопки соцсетей
   margin-top: 50px;
 }
 
-.social__list {
+.social-btn__list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -14,11 +14,11 @@
   list-style: none;
 }
 
-.social__link {
+.social-btn__link {
   display: block;
   position: relative;
 
-  width: 50px;
+  width: 50px; //размер ссылок
   height: 50px;
 
   & svg {
