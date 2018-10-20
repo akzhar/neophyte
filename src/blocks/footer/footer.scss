@@ -1,10 +1,6 @@
-
-.footer-wrapper {
-  background-color: $back; //чтобы не создавать новый эл-т
-}
-
 .footer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 
@@ -13,26 +9,28 @@
 }
 
 .footer .navigation-list {
-  display: flex;
+  display: flex; //было block
   flex-direction: column;
 
-  min-width: auto; //в index задана мин ширина
-
-  margin: 0; //было 0 auto для центровки
+  width: auto; //в index было задано
+  min-width: auto; //в index было задано
+  margin: 0; //в indexe было задано
 }
 
 .footer .navigation-list__item {
-  width: 100px;
-
-  text-align: center;
-  padding: 10px 0;
+   text-align: center;
 }
 
-.footer .social-btn { //кнопки соцсетей
-  margin-top: 0; //в index стоит отступ
+.footer .social-btn-list {
+  width: $width-0;
+  margin: 0; // в index был задан
+  padding-top: 30px;
+
+  border-top: 1px solid $border;
 }
 
-.footer--newspage .navigation-list__link--news { //на странице news у элемента news
+.footer--newspage .navigation-list__link--news,
+.footer--videopage .navigation-list__link--video { //на странице news у элемента news
   pointer-events: none; //отключаем событие клика
   cursor: default; //курсор обычный при наведении
 
@@ -40,13 +38,26 @@
 }
 
 @media (min-width: $width-1) {
-.footer {
+  .footer {
   width: 600px; //-40
+}
+
+.footer .social-btn-list {
+  width: auto; // в мобилке было 320px
+  padding-top: 0;
+
+  border: none;
   }
 }
 
 @media (min-width: $width-2) {
-.footer {
+  .footer {
   width: 1000px; //-40
+  }
+
+.footer .navigation-list {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
   }
 }

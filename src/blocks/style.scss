@@ -6,30 +6,35 @@
   url("../fonts/Roboto-Bold.ttf") format("ttf");
 }
 
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  margin: 0;
+}
+
 img {
   max-width: 100%;
 }
 
 @import "variables/variables.scss";
 
-@import "body/body.scss";
+@import "background/background.scss";
 
 @import "main-logo/main-logo.scss";
 
 @import "navigation-list/navigation-list.scss";
 
-@import "social-btn/social-btn.scss";
+@import "social-btn-list/social-btn-list.scss";
 
 @import "header/header.scss";
 
-@import "header-logo/header-logo.scss";
+@import "logo/logo.scss";
 
-@import "section-wrapper/section-wrapper.scss";
+@import "menu-btn/menu-btn.scss";
 
-@import "newslist/newslist.scss";
+@import "news-list/news-list.scss";
 
 @import "section-header/section-header.scss";
 
 @import "footer/footer.scss";
 
-@import "videolist/videolist.scss";
+@import "video-list/video-list.scss";

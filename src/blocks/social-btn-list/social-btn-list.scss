@@ -1,8 +1,18 @@
-.social-btn { //кнопки соцсетей
+.social-btn-list { //кнопки соцсетей
   margin-top: 50px;
 }
 
-.social-btn__list {
+.social-btn-list__follow {
+  display: block;
+
+  margin-bottom: 10px;
+
+  text-align: center;
+  text-transform: uppercase;
+  color: $white;
+}
+
+.social-btn-list__list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -14,7 +24,7 @@
   list-style: none;
 }
 
-.social-btn__link {
+.social-btn-list__link {
   display: block;
   position: relative;
 
@@ -32,7 +42,7 @@
 
   &:hover svg {
     fill: $red;
-    transition: fill .2s;
+    transition: fill 0.5s;
     filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3));
   }
 

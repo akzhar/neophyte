@@ -1,0 +1,52 @@
+.logo {
+  position: relative;
+
+  &::before, //красные кружки около лого
+  &::after {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%); //центруется
+
+    content: "";
+
+    width: 8px; //размеры кружков
+    height: 8px;
+
+    background-color: $red;
+    border-radius: 50%;
+
+    opacity: 0;
+    transition: opacity 2s;
+    z-index: 2;
+  }
+
+  &::before {
+    left: -15px;
+  }
+
+  &::after {
+    right: -15px;
+  }
+
+  &:hover::before {
+    opacity: 1;
+    transition: opacity 2s;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    transition: opacity 2s;
+  }
+
+  & svg {
+    fill: $white;
+  }
+
+  &:hover svg {
+    filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3));
+  }
+
+  &:active svg {
+    opacity: 0.6;
+  }
+}

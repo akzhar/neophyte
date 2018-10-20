@@ -1,7 +1,3 @@
-.header-wrapper {
-  background-color: $back; //чтобы не создавать новый эл-т
-}
-
 @-webkit-keyframes slideInDown {
   from {
     -webkit-transform: translate3d(0, -100%, 0);
@@ -48,19 +44,29 @@
   }
 }
 .header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
   width: $width-0;
   margin: 0 auto;
+  padding: 20px 0; //чтобы не прилипало к верхнему и нижнему краю
 }
 
-.header .navigation-list { //только для навигации внутри header
+.header .navigation-list {
   display: none; // в мобилке меню в шапке по умолчанию скрыто
-  margin-top: 0; //в indexe задан 150px
+
+  width: auto; //в index было задано
+  min-width: auto; //в index было задано
+  margin: 0; //в indexe было задано
 }
 
 .header .navigation-list--nojs, //если потерялся js
 .header .navigation-list--open { //открытое меню
-  display: flex;
-  flex-direction: column;
+  display: block;
+
+  width: $width-0;
 }
 
 .header .navigation-list--open { //анимация при открытии меню
@@ -69,8 +75,7 @@
 }
 
 .header .navigation-list__item {
-  text-align: center;
-  padding: 10px 0;
+   text-align: center;
 }
 
 .header--newspage .navigation-list__link--news,
@@ -82,27 +87,19 @@
 }
 
 @media (min-width: $width-1) {
-.header {
-  display: flex; //был block, т.к. меню появлялось под header-logo
-  justify-content: space-between;
-  align-items: center;
-
+  .header {
   width: 600px; //-40
   }
 
-.header .navigation-list { //меню в шапке по умолчанию скрыто
-  display: flex; //было none
-  flex-direction: row; //элементы меню в ряд
-
-  min-width: auto; //в index задана мин ширина
-
-  margin: 0; //было 0 auto для центровки
+  .header .navigation-list { //меню в шапке по умолчанию скрыто
+  display: flex; //было block
+  flex-wrap: wrap;
+  justify-content: space-between;
   }
 }
 
 @media (min-width: $width-2) {
-.header {
+  .header {
   width: 1000px; //-40
   }
 }
-

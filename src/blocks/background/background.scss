@@ -1,0 +1,12 @@
+.background {
+  background-color: $back;
+}
+
+.background--img {
+  background-image: url("../img/back.jpg");
+  background-position-x: 20%;
+}
+
+.background--index .social-btn-list__follow {
+  display: none; //на index призыва нет
+}
