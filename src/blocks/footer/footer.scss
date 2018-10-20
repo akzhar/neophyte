@@ -44,3 +44,9 @@
   width: 600px; //-40
   }
 }
+
+@media (min-width: $width-2) {
+.footer {
+  width: 1000px; //-40
+  }
+}

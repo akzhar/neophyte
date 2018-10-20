@@ -32,6 +32,7 @@
 
   &:hover svg {
     fill: $red;
+    transition: fill .2s;
     filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3));
   }
 

@@ -98,3 +98,10 @@
   margin: 0; //было 0 auto для центровки
   }
 }
+
+@media (min-width: $width-2) {
+.header {
+  width: 1000px; //-40
+  }
+}
+

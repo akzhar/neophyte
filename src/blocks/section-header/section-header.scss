@@ -44,3 +44,13 @@
    }
  }
 }
+
+@media (min-width: $width-2) {
+  .section-header {
+
+   &::before,
+   &::after {
+    width: 400px;
+   }
+ }
+}
