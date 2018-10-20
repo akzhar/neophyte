@@ -73,7 +73,8 @@
   padding: 10px 0;
 }
 
-.header--newspage .navigation-list__link--news { //на странице news у элемента news
+.header--newspage .navigation-list__link--news,
+.header--videopage .navigation-list__link--video { //на странице news у элемента news
   pointer-events: none; //отключаем событие клика
   cursor: default; //курсор обычный при наведении
 

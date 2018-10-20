@@ -6,8 +6,8 @@
 
   color: $white;
 
-  font-size: 32px;
-  line-height: 32px;
+  font-size: 26px;
+  line-height: 26px;
 
   text-transform: uppercase;
   text-align: center;
@@ -20,7 +20,7 @@
     top: 50%;
     transform: translate(0, -50%);
 
-    width: 50px; //размеры красных линий
+    width: 80px; //размеры красных линий
     height: 2px;
 
     background-color: $red;
@@ -38,11 +38,14 @@
 @media (min-width: $width-1) {
   .section-header {
 
-   &::before,
-   &::after {
-    width: 200px;
-   }
- }
+    font-size: 36px;
+    line-height: 36px;
+
+    &::before,
+    &::after {
+      width: 200px;
+    }
+  }
 }
 
 @media (min-width: $width-2) {
@@ -51,6 +54,6 @@
    &::before,
    &::after {
     width: 400px;
-   }
- }
+  }
+}
 }

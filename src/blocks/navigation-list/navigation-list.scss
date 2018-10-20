@@ -16,9 +16,14 @@
   line-height: 20px;
 }
 
+.navigation-list__item {
+  margin: 0 10px;
+}
+
 .navigation-list__link {
   text-decoration: none;
   color: $white;
+  font-weight: 600;
 
   &:hover {
     border-bottom: 2px solid $red;
