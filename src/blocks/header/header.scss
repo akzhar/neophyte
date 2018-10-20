@@ -66,7 +66,7 @@
 .header .navigation-list--open { //открытое меню
   display: block;
 
-  width: $width-0;
+  min-width: $width-0;
 }
 
 .header .navigation-list--open { //анимация при открытии меню
@@ -75,7 +75,10 @@
 }
 
 .header .navigation-list__item {
-   text-align: center;
+  margin: 0 10px;
+  padding: 10px 0;
+
+  text-align: center;
 }
 
 .header--newspage .navigation-list__link--news,
@@ -94,7 +97,7 @@
   .header .navigation-list { //меню в шапке по умолчанию скрыто
   display: flex; //было block
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   }
 }
 
