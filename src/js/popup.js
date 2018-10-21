@@ -1,4 +1,5 @@
 try{
+
   var popup = document.querySelector(".popup");
   var logo = document.querySelector(".main-logo");
   var close = popup.querySelector(".popup__btn");
@@ -14,5 +15,16 @@ try{
     popup.classList.remove("popup--show");
     popup.classList.add("popup--hide");
   });
+
+  window.addEventListener("keydown", function(evt) {
+    if (evt.keyCode === 27) {
+      if (popup.classList.contains("popup--show")) {
+        evt.preventDefault();
+        popup.classList.remove("popup--show");
+        popup.classList.add("popup--hide");
+      }
+    }
+  });
+
 }catch(e){
 }

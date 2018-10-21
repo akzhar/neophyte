@@ -12,8 +12,6 @@
 }
 
 .video-list__item {
-  width: 278px;
-  margin: 0 auto;
   margin-bottom: 15px;
 
   border: 1px solid $border;
@@ -53,8 +51,11 @@
 
 .video-list__video {
   display: block;
-  width: 248px;
+  width: 278px;
   margin: 0 auto;
+
+  border-top: 1px solid $border;
+  border-bottom: 1px solid $border;
 }
 
 @media (min-width: $width-1) {
@@ -63,7 +64,7 @@
   }
 
   .video-list__item {
-    width: 598px;
+    width: 100%;
   }
 
   .video-list__description {
@@ -87,7 +88,7 @@
   }
 
   .video-list__item {
-    width: 998px;
+    width: 100%;
   }
 
   .video-list__video {

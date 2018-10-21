@@ -1,4 +1,5 @@
 try {
+
   var menubutton = document.querySelector(".menu-btn");
   var menu = document.querySelector(".navigation-list");
 
@@ -9,6 +10,7 @@ try {
     menu.classList.toggle("navigation-list--open");
     menubutton.classList.toggle("menu-btn--open");
   });
+
 }catch(e){
 }
 
