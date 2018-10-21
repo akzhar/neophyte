@@ -1,3 +1,3 @@
-//= menubutton.js
+//= popup.js
 
-//= slider.js
+//= menubutton.js

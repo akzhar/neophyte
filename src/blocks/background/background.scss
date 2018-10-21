@@ -7,6 +7,10 @@
   background-position-x: 20%;
 }
 
+.background--index {
+ position: relative; // для popup
+}
+
 .background--index .social-btn-list__follow {
   display: none; //на index призыва нет
 }

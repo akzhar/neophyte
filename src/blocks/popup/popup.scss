@@ -1,0 +1,81 @@
+.popup {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  width: 95%;
+
+  border: 1px solid $border;
+
+  z-index: 2;
+}
+
+.popup--hide {
+  display: none;
+}
+
+.popup--show {
+  display: block;
+}
+
+.popup__btn { //кнопка открытия меню
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  width: 60px; //размеры кнопки открытия меню
+  height: 60px;
+
+  border: none;
+
+  background-color: transparent;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    left: 50%;
+
+    width: 30px; //размеры полосок
+    height: 2px;
+    background-color: $white;
+
+    content: "";
+
+    transform: translate(-50%, 0); //центруется
+  }
+
+    &::before { //верхняя полоска
+    top: 29px; //смещается вниз
+    transform: translate(-50%, 0) rotate(-45deg); //центруется и поворачивается
+  }
+
+  &::after { //нижняя полоска
+    bottom: 29px; //смещается вверх
+    transform: translate(-50%, 0) rotate(45deg); //центруется и поворачивается
+  }
+
+}
+
+.popup__description {
+  padding: 15px;
+  padding-top: 50px;
+}
+
+.popup__text {
+  margin: 15px 0;
+
+  color: $white;
+
+  font-size: 16px;
+  line-height: 22px;
+}
