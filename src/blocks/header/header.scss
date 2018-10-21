@@ -60,6 +60,9 @@
   width: auto; //в index было задано
   min-width: auto; //в index было задано
   margin: 0; //в indexe было задано
+
+  border-top: 1px solid $border;
+  border-bottom: 1px solid $border;
 }
 
 .header .navigation-list--nojs, //если потерялся js
@@ -99,6 +102,8 @@
   display: flex; //было block
   flex-wrap: wrap;
   justify-content: flex-start;
+
+  border: none;
   }
 }
 
