@@ -4,7 +4,7 @@
   justify-content: space-between;
 
   min-width: $width-0; //чтобы пункты не слипались на узком экране
-  width: 70%; // чтобы пункты тянулись и не прилипали к краям
+  width: 40%; // чтобы пункты тянулись и не прилипали к краям
   margin: 0 auto;
   margin-top: 150px;
   padding: 0;
@@ -19,7 +19,7 @@
 .navigation-list__link {
   text-decoration: none;
   color: $white;
-  font-weight: 600;
+  font-weight: 700;
 
   &:hover {
     border-bottom: 2px solid $red;

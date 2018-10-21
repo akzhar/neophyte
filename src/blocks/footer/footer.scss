@@ -34,7 +34,8 @@
 }
 
 .footer--newspage .navigation-list__link--news,
-.footer--videopage .navigation-list__link--video { //на странице news у элемента news
+.footer--videopage .navigation-list__link--video,
+.footer--artistspage .navigation-list__link--artists { //на странице news у элемента news
   pointer-events: none; //отключаем событие клика
   cursor: default; //курсор обычный при наведении
 

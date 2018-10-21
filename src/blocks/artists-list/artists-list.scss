@@ -1,9 +1,9 @@
-.news-list {
+.artists-list {
   width: $width-0;
   margin: 0 auto;
 }
 
-.news-list__list {
+.artists-list__list {
   margin: 0;
   padding: 0;
   padding-bottom: 10px; //чтобы отступ последней новости не вываливался за контейнер
@@ -11,7 +11,7 @@
   list-style: none;
 }
 
-.news-list__item {
+.artists-list__item {
   width: 278px;
   margin: 0 auto;
   margin-bottom: 15px;
@@ -21,11 +21,14 @@
   background-color: $back;
 }
 
-.news-list__img {
+.artists-list__img-link {
+  display: block;
+
+  width: 90%;
   margin: 15px auto; //отступы у изображения
 }
 
-.news-list__description { //обертка для даты, заголовка и текста
+.artists-list__description { //обертка для даты, заголовка и текста
   margin: 15px;
 
   color: $white;
@@ -34,18 +37,11 @@
   line-height: 18px;
 }
 
-.news-list__time {
-  display: block;
-  margin-bottom: 5px;
-
-  color: $red;
-}
-
-.news-list__header {
+.artists-list__header {
   display: block;
   margin-bottom: 10px;
 
-  color: $white;
+  color: $red;
   text-decoration: none;
   font-size: 16px;
   font-weight: 700;
@@ -61,44 +57,78 @@
   }
 }
 
-.news-list__text {
+.artists-list__text {
   margin: 0;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $border;
+}
+
+.artists-list__link-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.artists-list__link-item {
+  margin-right: 10px;
+}
+
+.artists-list__link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $white;
+  font-weight: 700;
+
+  font-size: 14px;
+  line-height: 14px;
+
+  &:hover {
+    border-bottom: 2px solid $red;
+    transition: border 0.1s;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
 
 @media (min-width: $width-1) {
-  .news-list {
+  .artists-list {
     width: 600px; //-40
   }
 
-  .news-list__list {
+  .artists-list__list {
     display: flex;
     flex-wrap: wrap;
   }
 
-  .news-list__item {
+  .artists-list__item {
     margin: 0 40px 40px 0;
   }
 
-  .news-list__item:nth-child(2n) {
+  .artists-list__item:nth-child(2n) {
     margin-right: 0;
   }
 }
 
 @media (min-width: $width-2) {
-  .news-list {
+  .artists-list {
     width: 1000px; //-40
   }
 
-  .news-list__item {
+  .artists-list__item {
     margin-right: 80px;
     margin-bottom: 80px;
   }
 
-  .news-list__item:nth-child(2n) {
+  .artists-list__item:nth-child(2n) {
     margin-right: 80px;
   }
 
-  .news-list__item:nth-child(3n) {
+  .artists-list__item:nth-child(3n) {
     margin-right: 0;
   }
 }
