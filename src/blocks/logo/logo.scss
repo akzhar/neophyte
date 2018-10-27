@@ -2,6 +2,9 @@
   position: relative;
   padding: 20px 0;
 
+  // outline: 1px solid rgba(123, 52, 175, 0.3); //временно для сетки
+  // background-color: rgba(123, 52, 175, 0.3); //временно для сетки
+
   &::before, //красные кружки около лого
   &::after {
     position: absolute;
@@ -49,5 +52,12 @@
 
   &:active svg {
     opacity: 0.6;
+  }
+}
+
+@media (min-width: $width-2) { //если viewport шире width-2
+  .logo svg {
+    width: 500px;
+    height: 80px;
   }
 }

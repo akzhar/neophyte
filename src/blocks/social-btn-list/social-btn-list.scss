@@ -1,15 +1,25 @@
 .social-btn-list { //кнопки соцсетей
   margin-top: 50px;
+
+  // outline: 1px solid rgba(103, 152, 115, 0.3); //временно для сетки
+  // background-color: rgba(103, 152, 115, 0.3); //временно для сетки
 }
 
 .social-btn-list__follow {
   display: block;
 
+  width: 200px;
+  margin: 0 auto;
   margin-bottom: 10px;
 
   text-align: center;
   text-transform: uppercase;
   color: $red;
+  font-size: $font-p1;
+  line-height: $line-p1;
+
+  // outline: 1px solid rgba(173, 152, 225, 0.3); //временно для сетки
+  // background-color: rgba(173, 152, 225, 0.3); //временно для сетки
 }
 
 .social-btn-list__list {
@@ -27,6 +37,9 @@
 .social-btn-list__link {
   display: block;
   position: relative;
+
+  // outline: 1px solid rgba(173, 152, 225, 0.3); //временно для сетки
+  // background-color: rgba(173, 152, 225, 0.3); //временно для сетки
 
   width: 50px; //размер ссылок
   height: 50px;
@@ -48,5 +61,12 @@
 
   &:active svg {
     opacity: 0.6;
+  }
+}
+
+@media (min-width: $width-2) {
+  .social-btn-list__follow {
+    font-size: $font-p2;
+    line-height: $line-p2;
   }
 }

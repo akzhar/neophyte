@@ -1,6 +1,9 @@
 .video-list {
   width: $width-0;
   margin: 0 auto;
+
+  // outline: 1px solid rgba(173, 152, 225, 0.3); //временно для сетки
+  // background-color: rgba(173, 152, 225, 0.3); //временно для сетки
 }
 
 .video-list__list {
@@ -24,21 +27,26 @@
 
   color: $white;
 
-  font-size: 14px;
-  line-height: 18px;
+  // outline: 1px solid rgba(73, 52, 25, 0.3); //временно для сетки
+  // background-color: rgba(73, 52, 25, 0.3); //временно для сетки
 }
 
 .video-list__header {
   display: block;
-  margin-bottom: 10px;
+  padding: 10px 0;
+  margin-bottom: 20px;
 
   color: $white;
   text-decoration: none;
   text-align: center;
-  font-size: 16px;
+  font-size: $font-h1;
+  line-height: $line-h1;
   font-weight: 700;
 
   text-transform: uppercase;
+
+  // outline: 1px solid rgba(22, 252, 225, 0.3); //временно для сетки
+  // background-color: rgba(22, 252, 225, 0.3); //временно для сетки
 
   &:hover {
     opacity: 0.6;
@@ -60,39 +68,32 @@
 
 @media (min-width: $width-1) {
   .video-list {
-    width: 600px; //-40
-  }
-
-  .video-list__item {
-    width: 100%;
+    width: $width-1-40;
   }
 
   .video-list__description {
     margin: 30px 0;
   }
 
-  .video-list__header {
-    font-size: 22px;
-    margin-bottom: 20px;
-  }
-
   .video-list__video {
-    width: 538px;
+    width: 600px;
     height: 315px;
   }
 }
 
 @media (min-width: $width-2) {
   .video-list {
-    width: 1000px; //-40
+    width: $width-2-40;
   }
 
-  .video-list__item {
-    width: 100%;
+  .video-list__header {
+    font-size: $font-h2;
+    line-height: $line-h2;
+    padding: 30px 0;
   }
 
   .video-list__video {
-    width: 958px;
+    width: 1240px;
     height: 715px;
   }
 }

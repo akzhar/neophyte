@@ -11,6 +11,15 @@ try {
     menubutton.classList.toggle("menu-btn--open");
   });
 
+  window.addEventListener("keydown", function(evt) {
+    if (evt.keyCode === 27) {
+      if (menu.classList.contains("navigation-list--open")) {
+        evt.preventDefault();
+        menu.classList.remove("navigation-list--open");
+      }
+    }
+  });
+
 }catch(e){
 }
 

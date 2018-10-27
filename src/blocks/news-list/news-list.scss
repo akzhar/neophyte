@@ -1,14 +1,20 @@
 .news-list {
   width: $width-0;
   margin: 0 auto;
+
+  // outline: 1px solid rgba(123, 52, 175, 0.3); //временно для сетки
+  // background-color: rgba(123, 52, 175, 0.3); //временно для сетки
 }
 
 .news-list__list {
-  margin: 0;
+  margin: 0; //чтобы не было зазора у футера
   padding: 0;
   padding-bottom: 10px; //чтобы отступ последней новости не вываливался за контейнер
 
   list-style: none;
+
+  // outline: 1px solid rgba(173, 152, 225, 0.3); //временно для сетки
+  // background-color: rgba(173, 152, 225, 0.3); //временно для сетки
 }
 
 .news-list__item {
@@ -19,26 +25,32 @@
   background-color: $back;
 }
 
-.news-list__img {
+.news-list__img-link {
   display: block;
-  margin: 15px auto;
+  min-width: 280px;
+  max-width: 280px;
+  margin: 15px;
 }
 
 .news-list__description { //обертка для даты, заголовка и текста
   margin: 15px 0;
   padding: 0 15px;
 
-  color: $white;
+  font-size: $font-p1;
+  line-height: $line-p1;
 
-  font-size: 14px;
-  line-height: 18px;
+  // outline: 1px solid rgba(173, 152, 225, 0.3); //временно для сетки
+  // background-color: rgba(173, 152, 225, 0.3); //временно для сетки
 }
 
 .news-list__time {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 
   color: $red;
+
+  // outline: 1px solid rgba(103, 102, 225, 0.3); //временно для сетки
+  // background-color: rgba(103, 102, 225, 0.3); //временно для сетки
 }
 
 .news-list__header {
@@ -47,10 +59,15 @@
 
   color: $white;
   text-decoration: none;
-  font-size: 16px;
+  font-size: $font-h1;
+  line-height: $line-h1;
   font-weight: 700;
 
   text-transform: uppercase;
+
+  // outline: 1px solid rgba(113, 112, 215, 0.3); //временно для сетки
+  // background-color: rgba(113, 112, 215, 0.3); //временно для сетки
+
 
   &:hover {
     opacity: 0.6;
@@ -63,21 +80,20 @@
 
 .news-list__text {
   margin: 0;
+
+  color: $white;
+
+  // outline: 1px solid rgba(113, 112, 215, 0.3); //временно для сетки
+  // background-color: rgba(113, 112, 215, 0.3); //временно для сетки
 }
 
 @media (min-width: $width-1) {
   .news-list {
-    width: 600px; //-40
+    width: $width-1-40;
   }
 
   .news-list__item {
     display: flex;
-    width: 100%;
-  }
-
-  .news-list__img {
-    margin: 15px; //отступы у изображения
-    margin-right: 0;
   }
 
   .news-list__description {
@@ -87,10 +103,16 @@
 
 @media (min-width: $width-2) {
   .news-list {
-    width: 1000px; //-40
+    width: $width-2-40;
   }
 
-  .news-list__item {
-    width: 100%;
+  .news-list__header {
+    font-size: $font-h2;
+    line-height: $line-h2;
+  }
+
+  .news-list__description {
+    font-size: $font-p2;
+    line-height: $line-p2;
   }
 }

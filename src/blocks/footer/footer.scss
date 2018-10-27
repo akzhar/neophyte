@@ -7,22 +7,24 @@
   width: $width-0;
   margin: 0 auto;
   padding: 20px 0; //чтобы не прилипало к верхнему и нижнему краю
+
+  // outline: 1px solid rgba(223, 52, 75, 0.3); //временно для сетки
+  // background-color: rgba(223, 52, 75, 0.3); //временно для сетки
+}
+
+.footer .logo {
+  margin: 0 auto;
 }
 
 .footer .navigation-list {
-  display: flex; //было block
-  flex-direction: column;
-
   width: auto; //в index было задано
   min-width: auto; //в index было задано
-  margin: 0; //в indexe было задано
+  margin: 20px auto; //в indexe было задано
 }
 
 .footer .navigation-list__item {
-  margin: 0 10px;
+  margin: 0 20px;
   padding: 10px 0;
-
-  text-align: center;
 }
 
 .footer .social-btn-list {
@@ -43,26 +45,24 @@
 }
 
 @media (min-width: $width-1) {
-  .footer {
-  width: 600px; //-40
+.footer,
+.footer .social-btn-list {
+  width: $width-1-40;
 }
 
-.footer .social-btn-list {
-  width: auto; // в мобилке было 320px
-  padding-top: 0;
-
-  border: none;
-  }
+.footer .logo,
+.footer .navigation-list {
+  margin: 0
+}
 }
 
 @media (min-width: $width-2) {
-  .footer {
-  width: 1000px; //-40
-  }
+.footer,
+.footer .social-btn-list {
+  width: $width-2-40;
+}
 
-.footer .navigation-list {
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  }
+.footer .navigation-list__item {
+  margin: 0 20px;
+}
 }

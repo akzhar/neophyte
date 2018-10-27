@@ -6,27 +6,36 @@
   min-width: $width-0; //чтобы пункты не слипались на узком экране
   width: 40%; // чтобы пункты тянулись и не прилипали к краям
   margin: 0 auto;
-  margin-top: 150px;
+  margin-top: 50px;
   padding: 0;
 
   list-style: none;
-  text-transform: uppercase;
 
-  font-size: 16px;
-  line-height: 20px;
-}
-
-.navigation-list__link {
-  text-decoration: none;
-  color: $white;
-  font-weight: 700;
-
-  &:hover {
-    border-bottom: 2px solid $red;
-    transition: border 0.1s;
+  // outline: 1px solid rgba(23, 52, 175, 0.3); //временно для сетки
+  // background-color: rgba(23, 52, 175, 0.3); //временно для сетки
   }
 
-  &:active {
-    opacity: 0.3;
+  .navigation-list__link {
+    text-decoration: none;
+    color: $white;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: $font-h1;
+    line-height: $line-h1;
+
+    &:hover {
+      border-bottom: 2px solid $red;
+      transition: border 0.1s;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
   }
-}
+
+  @media (min-width: $width-2) {
+    .navigation-list__link {
+      font-size: $font-h2;
+      line-height: $line-h2;
+    }
+  }

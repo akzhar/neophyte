@@ -4,11 +4,14 @@
   width: 60px; //размеры кнопки открытия меню
   height: 60px;
 
+  margin: 0 auto;
   padding: 0;
 
   border: none;
 
   background-color: transparent;
+
+  outline: none;
 
   &:hover {
     cursor: pointer;

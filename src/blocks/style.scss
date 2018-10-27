@@ -12,8 +12,12 @@ body {
 }
 
 img {
+  display: block;
   max-width: 100%;
+  min-height: 100%;
 }
+
+@import "normalize/normalize.min.scss";
 
 @import "variables/variables.scss";
 
