@@ -93,3 +93,10 @@
   font-size: $font-p1;
   line-height: $line-p1;
 }
+
+@media (min-width: $width-2) {
+  .popup__text {
+    font-size: $font-p2;
+    line-height: $line-p2;
+  }
+}
