@@ -41,7 +41,7 @@
   pointer-events: none; //отключаем событие клика
   cursor: default; //курсор обычный при наведении
 
-  border-bottom: 2px solid $red;
+  border-bottom: 3px solid $red;
 }
 
 @media (min-width: $width-1) {

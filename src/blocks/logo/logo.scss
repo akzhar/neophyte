@@ -13,8 +13,8 @@
 
     content: "";
 
-    width: 8px; //размеры кружков
-    height: 8px;
+    width: 15px; //размеры кружков
+    height: 15px;
 
     background-color: $red;
     border-radius: 50%;
@@ -25,11 +25,11 @@
   }
 
   &::before {
-    left: -15px;
+    left: -20px;
   }
 
   &::after {
-    right: -15px;
+    right: -20px;
   }
 
   &:hover::before {

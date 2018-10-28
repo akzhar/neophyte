@@ -69,7 +69,6 @@
   margin: 0; //в indexe было задано
 
   border-top: 1px solid $border;
-  border-bottom: 1px solid $border;
 }
 
 .header .navigation-list--nojs, //если потерялся js
@@ -86,9 +85,11 @@
 
 .header .navigation-list__item {
   margin: 0 10px;
-  padding: 10px 0;
+  padding: 30px 0;
 
   text-align: center;
+
+  border-bottom: 1px solid $border;
 }
 
 .header--newspage .navigation-list__link--news,
@@ -97,7 +98,7 @@
   pointer-events: none; //отключаем событие клика
   cursor: default; //курсор обычный при наведении
 
-  border-bottom: 2px solid $red;
+  border-bottom: 3px solid $red;
 }
 
 @media (min-width: $width-1) {
