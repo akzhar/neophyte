@@ -47,14 +47,6 @@
 
   // outline: 1px solid rgba(22, 252, 225, 0.3); //временно для сетки
   // background-color: rgba(22, 252, 225, 0.3); //временно для сетки
-
-  &:hover {
-    opacity: 0.6;
-  }
-
-  &:active {
-    opacity: 0.3;
-  }
 }
 
 .video-list__video {
@@ -87,8 +79,8 @@
   }
 
   .video-list__header {
-    font-size: $font-h2;
-    line-height: $line-h2;
+    font-size: $font-h3;
+    line-height: $line-h3;
     padding: 30px 0;
   }
 
