@@ -1,18 +1,23 @@
 .navigation-list { //навигация на стартовой странице
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
 
-  min-width: $width-0; //чтобы пункты не слипались на узком экране
-  width: 40%; // чтобы пункты тянулись и не прилипали к краям
+  width: $width-0;
   margin: 0 auto;
-  margin-top: 100px;
   padding: 0;
 
   list-style: none;
 
+  text-align: center;
+
   // outline: 1px solid rgba(23, 52, 175, 0.3); //временно для сетки
   // background-color: rgba(23, 52, 175, 0.3); //временно для сетки
+  }
+
+  .navigation-list__item {
+    padding: 10px 0;
+    margin: 0 10px;
   }
 
   .navigation-list__link {
@@ -33,7 +38,20 @@
     }
   }
 
+  @media (min-width: $width-1) {
+    .navigation-list {
+      width: $width-1-40;
+      margin-top: 100px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
   @media (min-width: $width-2) {
+    .navigation-list {
+      width: $width-2-40;
+    }
+
     .navigation-list__link {
       font-size: $font-h2;
       line-height: $line-h2;

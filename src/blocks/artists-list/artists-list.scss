@@ -93,28 +93,35 @@
 }
 
 .artists-list__link-item {
-  margin-right: 10px;
-}
-
-.artists-list__link {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: $white;
-  font-weight: 700;
-  font-size: $font-p1;
-  line-height: $line-p1;
+    width: 30px;
+    margin-right: 25px;
 
   // outline: 1px solid rgba(173, 52, 25, 0.3); //временно для сетки
   // background-color: rgba(173, 52, 25, 0.3); //временно для сетки
+}
 
-  &:hover {
-    border-bottom: 3px solid $red;
-    transition: border 0.1s;
+.artists-list__link {
+  position: relative;
+  display: block;
+  padding: 25px 0;
+
+  &:hover svg {
+    fill: $red;
+    transition: fill 0.5s;
+    filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3));
   }
 
-  &:active {
-    opacity: 0.3;
+  &:active svg {
+    opacity: 0.6;
   }
+}
+
+.artists-list__link svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  fill: $white;
 }
 
 @media (min-width: $width-1) {
@@ -132,6 +139,12 @@
     margin: 0 0 30px 0;
     width: 340px;
   }
+
+  .artists-list__link svg {
+  width: 25px;
+  height: 25px;
+}
+
 }
 
 @media (min-width: $width-2) {
@@ -148,13 +161,14 @@
     line-height: $line-h2;
   }
 
-  .artists-list__description,
-  .artists-list__link {
+  .artists-list__description {
     font-size: $font-p2;
     line-height: $line-p2;
   }
 
-  .artists-list__link-item {
-  margin-right: 20px;
-  }
+  .artists-list__link svg {
+  width: 30px;
+  height: 30px;
+}
+
 }

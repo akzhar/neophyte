@@ -1,46 +1,8 @@
 .logo {
   position: relative;
-  padding: 20px 0;
 
   // outline: 1px solid rgba(123, 52, 175, 0.3); //временно для сетки
   // background-color: rgba(123, 52, 175, 0.3); //временно для сетки
-
-  &::before, //красные кружки около лого
-  &::after {
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%); //центруется
-
-    content: "";
-
-    width: 15px; //размеры кружков
-    height: 15px;
-
-    background-color: $red;
-    border-radius: 50%;
-
-    opacity: 0;
-    transition: opacity 2s;
-    z-index: 2;
-  }
-
-  &::before {
-    left: -20px;
-  }
-
-  &::after {
-    right: -20px;
-  }
-
-  &:hover::before {
-    opacity: 1;
-    transition: opacity 2s;
-  }
-
-  &:hover::after {
-    opacity: 1;
-    transition: opacity 2s;
-  }
 
   & svg {
     fill: $white;

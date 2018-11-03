@@ -1,34 +1,11 @@
-.social-btn-list { //кнопки соцсетей
-  margin-top: 50px;
-
-  // outline: 1px solid rgba(103, 152, 115, 0.3); //временно для сетки
-  // background-color: rgba(103, 152, 115, 0.3); //временно для сетки
-}
-
-.social-btn-list__follow {
-  display: block;
-
-  width: 200px;
-  margin: 0 auto;
-  margin-bottom: 10px;
-
-  text-align: center;
-  text-transform: uppercase;
-  color: $red;
-  font-size: $font-p1;
-  line-height: $line-p1;
-
-  // outline: 1px solid rgba(173, 152, 225, 0.3); //временно для сетки
-  // background-color: rgba(173, 152, 225, 0.3); //временно для сетки
-}
-
-.social-btn-list__list {
+.social-btn-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 
   width: 200px;
   margin: 0 auto;
+  margin-top: 50px;
   padding: 0;
 
   list-style: none;
@@ -64,9 +41,16 @@
   }
 }
 
+@media (min-width: $width-1) {
+  .social-btn-list svg {
+    width: 25px;
+    height: 25px;
+  }
+}
+
 @media (min-width: $width-2) {
-  .social-btn-list__follow {
-    font-size: $font-p2;
-    line-height: $line-p2;
+  .social-btn-list svg {
+    width: 30px;
+    height: 30px;
   }
 }
