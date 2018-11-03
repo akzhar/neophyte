@@ -30,6 +30,8 @@
   min-width: 280px;
   max-width: 280px;
   margin: 15px;
+
+  border-bottom: 1px solid $border;
 }
 
 .news-list__description { //обертка для даты, заголовка и текста
@@ -98,6 +100,10 @@
 
   .news-list__description {
     border-left: 1px solid $border;
+  }
+
+  .news-list__img-link {
+    border-bottom: none;
   }
 }
 

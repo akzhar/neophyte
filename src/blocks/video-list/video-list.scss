@@ -31,10 +31,11 @@
 
 .video-list__header {
   display: block;
+  width: 210px;
+  margin: 0 auto 10px auto;
   padding: 10px 0;
-  margin-bottom: 20px;
 
-  color: $white;
+  color: $red;
   text-decoration: none;
   text-align: center;
   font-size: $font-h1;
@@ -45,21 +46,25 @@
 
   // outline: 1px solid rgba(22, 252, 225, 0.3); //временно для сетки
   // background-color: rgba(22, 252, 225, 0.3); //временно для сетки
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
 
 .video-list__video {
   width: 280px;
   margin: 0 auto;
-  list-style: none;
   padding: 0;
-
-  // border-top: 1px solid $border;
-  // border-bottom: 1px solid $border;
+  list-style: none;
 }
 
 .video-list__video-item {
   width: 280px;
-  margin: 0 auto;
   outline: 1px solid $border;
   margin-bottom: 25px;
 }
@@ -67,7 +72,6 @@
 .video-list__youtube {
   display: block;
   width: 100%;
-  margin: 0 auto;
 }
 
 @media (min-width: $width-1) {
@@ -75,8 +79,8 @@
     width: $width-1-40;
   }
 
-  .video-list__description {
-    margin: 30px 0;
+  .video-list__header {
+    width: 300px;
   }
 
   .video-list__video {
@@ -101,6 +105,7 @@
   }
 
   .video-list__header {
+    width: 500px;
     font-size: $font-h3;
     line-height: $line-h3;
   }
