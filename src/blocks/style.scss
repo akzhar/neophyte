@@ -1,3 +1,5 @@
+@import "variables/variables.scss";
+
 @font-face { //локальное подключение шрифтов
   font-weight: normal;
   font-family: "Roboto";
@@ -6,19 +8,26 @@
   url("../fonts/Roboto-Bold.ttf") format("ttf");
 }
 
+html {
+  height: 100%; //для прилипающего подвала
+}
+
 body {
+  display: flex; //для прилипающего подвала
+  flex-direction: column; //для прилипающего подвала
+  min-height: 100%; //для прилипающего подвала
+
   font-family: "Roboto", Arial, sans-serif;
-  margin: 0;
 }
 
 img {
   max-width: 100%;
-  height: auto;
+  // height: auto;
 }
 
-@import "normalize/normalize.min.scss";
+@import "other/other.scss";
 
-@import "variables/variables.scss";
+@import "normalize/normalize.min.scss";
 
 @import "background/background.scss";
 

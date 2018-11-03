@@ -1,0 +1,11 @@
+.body-index {
+ position: relative; // для popup
+}
+
+.sticky-footer {
+  margin-top: auto; //для прилипающего подвала
+}
+
+.main {
+ flex-grow: 1; //для растягивания фона на всю высоту
+}

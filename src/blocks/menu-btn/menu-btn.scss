@@ -65,6 +65,12 @@
 
 @media (min-width: $width-1) { //если viewport шире width-1
   .menu-btn {
+    margin: 0;
+  }
+}
+
+@media (min-width: $width-2) { //если viewport шире width-1
+  .menu-btn {
     display: none;
   }
 }
