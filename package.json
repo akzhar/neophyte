@@ -14,12 +14,10 @@
     "clean": "gulp clean",
     "cwebp": "gulp cwebp",
     "fonts": "gulp fonts",
+    "sprite": "gulp sprite",
     "lint": "gulp lint"
   },
-  "dependencies": {
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.26.3",
     "dev-ip": "^1.0.1",
@@ -31,11 +29,16 @@
     "gulp-jsmin": "^0.1.5",
     "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^8.0.0",
+    "gulp-posthtml": "^3.0.4",
+    "gulp-rename": "^1.4.0",
     "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^4.0.1",
     "gulp-stylelint": "^7.0.0",
+    "gulp-svgstore": "^7.0.0",
     "imagemin-jpeg-recompress": "^5.1.0",
     "imagemin-pngquant": "^6.0.0",
     "imagemin-svgo": "^7.0.0",
+    "posthtml-include": "^1.2.0",
     "rimraf": "^2.6.2",
     "stylelint": "^9.7.1"
   }

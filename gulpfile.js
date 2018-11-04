@@ -17,6 +17,9 @@ rimraf = require("rimraf"),
 gulpStylelint = require('gulp-stylelint'),
 server = require("browser-sync").create(),
 devip = require('dev-ip'),
+svgstore = require('gulp-svgstore'),
+posthtml = require('gulp-posthtml'),
+include = require('posthtml-include'),
 rename = require("gulp-rename");
 
 var path = {
@@ -31,13 +34,25 @@ var path = {
       html: "src/blocks/*.html", // 1 уровень вложенности - только основные файлы
       style: "src/blocks/*.{scss, sass}", // 1 уровень вложенности - только основной файл
       js: "src/js/**/*.js",
-      image: "src/img/**/*.*",
+      image: "src/img/**/*",
+      spritein: "src/img/**/*.svg",
+      spriteout: "src/img/",
       fonts: "src/fonts/**/*.*"
     },
     clean: "docs" // адрес папки build
   };
 
 devip(); // [ "192.168.1.76", "192.168.1.80" ] or false if nothing found (ie, offline user)
+
+gulp.task("sprite", function () { // задача - вызывается как скрипт из package.json
+  gulp.src(path.source.spritein) // источник
+    .pipe(svgstore({
+      inlineSvg: true
+    }))
+    .pipe(rename("sprite.svg"))
+    .pipe(gulp.dest(path.source.spriteout)) // класть результат сюда
+    .pipe(server.stream()) // обновление браузера
+  });
 
 gulp.task("fonts", function () { // задача - вызывается как скрипт из package.json
   gulp.src(path.source.fonts) // источник
@@ -108,25 +123,29 @@ gulp.task("cwebp", function () { // задача - вызывается как �
 gulp.task("html", function () { // задача - вызывается как скрипт из package.json
   gulp.src(path.source.html) // источник
     .pipe(rigger()) // сборка из разных файлов
+    .pipe(posthtml([
+        include()
+      ]))
     .pipe(gulp.dest(path.build.html)) // класть результат сюда
     .pipe(server.stream()) // обновление браузера
   });
 
 gulp.task("watch", function () { // задача - вызывается как скрипт из package.json
     gulp.watch([path.source.style], function(event, cb) { // отслеживание изменений файлов scss
-       gulp.start("style"); // в случае изменений - запуск задачи
+       gulp.start("style") // в случае изменений - запуск задачи
      });
     gulp.watch([path.source.image], function(event, cb) { // отслеживание изменений файлов image
-        gulp.start("image"); // в случае изменений - запуск задачи
+        gulp.start("image"), // в случае изменений - запуск задачи
+        gulp.start("sprite") // в случае изменений - запуск задачи
       });
     gulp.watch([path.source.js], function(event, cb) { // отслеживание изменений файлов js
-        gulp.start("js"); // в случае изменений - запуск задачи
+        gulp.start("js") // в случае изменений - запуск задачи
       });
     gulp.watch([path.source.fonts], function(event, cb) { // отслеживание изменений файлов js
-        gulp.start("fonts"); // в случае изменений - запуск задачи
+        gulp.start("fonts") // в случае изменений - запуск задачи
       });
     gulp.watch([path.source.html], function(event, cb) { // отслеживание изменений файлов html
-        gulp.start("html"); // в случае изменений - запуск задачи
+        gulp.start("html") // в случае изменений - запуск задачи
       });
   });
 
@@ -134,7 +153,7 @@ gulp.task('clean', function (cb) { // задача - вызывается как
     rimraf(path.clean, cb); // удаление папки build (предыдущая сборка)
   });
 
-gulp.task ("start",["style", "fonts", "image", "js", "html", "cwebp", "watch"], function() { //задача - вызывается как скрипт из package.json
+gulp.task ("start",["style", "fonts", "image", "sprite", "cwebp", "js", "html", "watch"], function() { //задача - вызывается как скрипт из package.json
     server.init({ // перед запуском start запускается рад задач, затем запускается локальный сервер
       server:"docs", // адрес к папке где лежит сборка
       notify: false,
