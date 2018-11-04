@@ -1,5 +1,3 @@
-@import "variables/variables.scss";
-
 @font-face { //локальное подключение шрифтов
   font-weight: normal;
   font-family: "Roboto";
@@ -24,6 +22,8 @@ img {
   max-width: 100%;
   // height: auto;
 }
+
+@import "variables/variables.scss";
 
 @import "other/other.scss";
 
