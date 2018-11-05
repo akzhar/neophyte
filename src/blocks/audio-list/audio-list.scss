@@ -1,0 +1,129 @@
+.audio-list {
+  width: $width-0;
+  margin: 0 auto;
+
+  // outline: 1px solid rgba(173, 152, 225, 0.3); //временно для сетки
+  // background-color: rgba(173, 152, 225, 0.3); //временно для сетки
+}
+
+.audio-list__list {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 10px; //чтобы отступ последней новости не вываливался за контейнер
+
+  list-style: none;
+}
+
+.audio-list__item {
+  margin-bottom: 15px;
+
+  border: 1px solid $border;
+
+  background-color: $back;
+}
+
+.audio-list__wrapper { //обертка для заголовка и видео
+  margin: 15px 0;
+
+  // outline: 1px solid rgba(73, 52, 25, 0.3); //временно для сетки
+  // background-color: rgba(73, 52, 25, 0.3); //временно для сетки
+}
+
+.audio-list__header {
+  display: block;
+  width: 210px;
+  margin: 0 auto 10px auto;
+  padding: 10px 0;
+
+  color: $red;
+  text-decoration: none;
+  text-align: center;
+  font-size: $font-h1;
+  line-height: $line-h1;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  // outline: 1px solid rgba(22, 252, 225, 0.3); //временно для сетки
+  // background-color: rgba(22, 252, 225, 0.3); //временно для сетки
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.audio-list__audio {
+  width: 280px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.audio-list__audio-item {
+  width: 280px;
+  outline: 1px solid $border;
+  margin-bottom: 25px;
+}
+
+.audio-list__youtube {
+  display: block;
+  width: 100%;
+}
+
+@media (min-width: $width-1) {
+  .audio-list {
+    width: $width-1-40;
+  }
+
+  .audio-list__header {
+    width: 300px;
+  }
+
+  .audio-list__audio {
+    display: flex;
+    flex-wrap: wrap;
+    width: 680px;
+  }
+
+  .audio-list__audio-item {
+    width: 210px;
+    margin: 0 25px 25px 0;
+  }
+
+  .audio-list__audio-item:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: $width-2) {
+  .audio-list {
+    width: $width-2-40;
+  }
+
+  .audio-list__header {
+    width: 500px;
+    font-size: $font-h3;
+    line-height: $line-h3;
+  }
+
+  .audio-list__audio {
+    width: 1360px;
+  }
+
+  .audio-list__audio-item {
+    margin: 0 20px 20px 0;
+  }
+
+  .audio-list__audio-item:nth-child(3n) {
+    margin-right: 20px;
+  }
+
+  .audio-list__audio-item:nth-child(6n) {
+    margin-right: 0;
+  }
+
+}
