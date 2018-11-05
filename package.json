@@ -5,6 +5,7 @@
   "author": "",
   "license": "ISC",
   "scripts": {
+    "build": "gulp build",
     "start": "gulp start",
     "style": "gulp style",
     "js": "gulp js",
@@ -15,6 +16,8 @@
     "cwebp": "gulp cwebp",
     "fonts": "gulp fonts",
     "sprite": "gulp sprite",
+    "serve": "gulp serve",
+    "include": "gulp include",
     "lint": "gulp lint"
   },
   "dependencies": {},
@@ -40,6 +43,7 @@
     "imagemin-svgo": "^7.0.0",
     "posthtml-include": "^1.2.0",
     "rimraf": "^2.6.2",
+    "run-sequence": "^2.2.1",
     "stylelint": "^9.7.1"
   }
 }
