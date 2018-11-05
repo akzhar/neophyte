@@ -1,3 +1,3 @@
-//= popup.js
+<include src="src/js/popup.js"></include>
 
-//= menubutton.js
+<include src="src/js/menubutton.js"></include>

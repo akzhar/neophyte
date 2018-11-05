@@ -12,7 +12,6 @@ imageminSvgo = require('imagemin-svgo'),
 imageminJpegRecompress = require('imagemin-jpeg-recompress'),
 imageminPngquant = require("imagemin-pngquant"),
 cwebp = require('gulp-cwebp'),
-rigger = require("gulp-rigger"),
 rimraf = require("rimraf"),
 gulpStylelint = require('gulp-stylelint'),
 server = require("browser-sync").create(),
@@ -25,56 +24,66 @@ rename = require("gulp-rename");
 
 devip(); // [ "192.168.1.76", "192.168.1.80" ] or false if nothing found (ie, offline user)
 
-gulp.task("sprite", function () { // задача - вызывается как скрипт из package.json
-  gulp.src("src/img/**/inline-*.svg") // источник
-    .pipe(svgstore({
-      inlineSvg: true
-    }))
-    .pipe(rename("sprite.svg"))
-    .pipe(gulp.dest("docs/img/")) // класть результат сюда
-    .pipe(server.stream()) // обновление браузера
-  });
-
-gulp.task("fonts", function () { // задача - вызывается как скрипт из package.json
-  gulp.src("src/fonts/**/*.*") // источник
-  .pipe(gulp.dest("docs/fonts/")) // класть результат сюда
-  .pipe(server.stream()) // перезагрузка сборки в браузере
-});
-
 gulp.task('lint', function lintCssTask() { // задача - вызывается как скрипт из package.json
   return gulp
-    .src("src/blocks/*.{scss, sass}") // источник
-    .pipe(gulpStylelint({
-      reporters: [
-      {formatter: 'string', console: true}
-      ]
-    }));
-  });
+  .src("src/blocks/*.{scss, sass}") // источник
+  .pipe(gulpStylelint({
+    reporters: [
+    {formatter: 'string', console: true}
+    ]
+  }));
+});
+
+gulp.task('clean', function (cb) { // задача - вызывается как скрипт из package.json
+  rimraf("docs", cb); // удаление папки build (предыдущая сборка)
+});
+
+gulp.task("copy", function () { // задача - вызывается как скрипт из package.json
+  gulp.src([  // источник
+    "src/fonts/**/*.*"
+    ],
+    {
+      base: "src"
+    })
+  .pipe(gulp.dest("docs/")); // класть результат сюда
+});
+
+gulp.task("sprite", function () { // задача - вызывается как скрипт из package.json
+  gulp.src("src/img/sprite/inline-*.svg") // источник
+  .pipe(svgstore({
+    inlineSvg: true
+  }))
+  .pipe(rename("sprite.svg"))
+  .pipe(gulp.dest("docs/img/")) // класть результат сюда
+  .pipe(server.stream()) // обновление браузера
+});
 
 gulp.task("style", function () { // задача - вызывается как скрипт из package.json
-  gulp.src("src/blocks/*.{scss, sass}") // источник
-    .pipe(plumber()) // отслеживание ошибок - вывод в консоль, не дает прервать процесс
-    .pipe(sass().on('error', sass.logError)) // компиляция из препроцессорного кода sass --> css кода
-    .pipe(autoprefixer()) // расставление автопрефиксов
-    .pipe(gulp.dest("docs/css/")) // класть результат сюда
-    .pipe(cleanCSS()) // минификация
-    .pipe(rename("style.min.css"))
-    .pipe(gulp.dest("docs/css/")) // класть результат сюда
-    .pipe(server.stream()) // обновление браузера
-  });
+  gulp.src("src/blocks/*.{scss,sass}") // источник
+  .pipe(plumber()) // отслеживание ошибок - вывод в консоль, не дает прервать процесс
+  .pipe(sass().on('error', sass.logError)) // компиляция из препроцессорного кода sass --> css кода
+  .pipe(autoprefixer()) // расставление автопрефиксов
+  .pipe(gulp.dest("docs/css/")) // класть результат сюда
+  .pipe(cleanCSS()) // минификация
+  .pipe(rename("style.min.css"))
+  .pipe(gulp.dest("docs/css/")) // класть результат сюда
+  .pipe(server.stream()) // обновление браузера
+});
 
 gulp.task('js', function () { //задача - вызывается как скрипт из package.json
   gulp.src("src/js/**/script.js") // источник
-      .pipe(rigger()) // сборка из разных файлов
-      .pipe(gulp.dest("docs/js/")) // класть результат сюда
-      .pipe(jsmin()) // минификация
-      .pipe(rename("script.min.js"))
-      .pipe(gulp.dest("docs/js/")) // класть результат сюда
-      .pipe(server.stream()) // обновление браузера
-    });
+  .pipe(posthtml([ // сборка из разных файлов
+    include()
+    ]))
+  .pipe(gulp.dest("docs/js/")) // класть результат сюда
+  .pipe(jsmin()) // минификация
+  .pipe(rename("script.min.js"))
+  .pipe(gulp.dest("docs/js/")) // класть результат сюда
+  .pipe(server.stream()) // обновление браузера
+});
 
 gulp.task("image", function () { // задача - вызывается как скрипт из package.json
-  gulp.src("src/img/**/*.*") // источник
+  gulp.src("src/img/*.{png,jpg,svg}") // источник
   .pipe(imagemin([
     imageminPngquant({ // сжатие png
       quality: '80'
@@ -90,89 +99,74 @@ gulp.task("image", function () { // задача - вызывается как �
       {removeElementsByAttr: true},
       {removeStyleElement: true},
       {removeViewBox: false}
-      ]
+    ]
     })
-    ]))
-    .pipe(gulp.dest("docs/img/")) // класть результат сюда
-    .pipe(server.stream()) // обновление браузера
-  });
+  ]))
+  .pipe(gulp.dest("docs/img/")) // класть результат сюда
+  .pipe(server.stream()) // обновление браузера
+});
 
 gulp.task("cwebp", function () { // задача - вызывается как скрипт из package.json
-  gulp.src("src/img/**/*.*") // источник
+  gulp.src("src/img/*.*") // источник
   .pipe(cwebp())
   .pipe(gulp.dest("docs/img/")); // класть результат сюда
 });
 
 gulp.task("html", function () { // задача - вызывается как скрипт из package.json
   gulp.src("src/blocks/*.html") // источник
-    .pipe(rigger()) // сборка из разных файлов
-    .pipe(gulp.dest("docs/")) // класть результат сюда
-    .pipe(server.stream()) // обновление браузера
-  });
-
-gulp.task("include", function () { // задача - вызывается как скрипт из package.json
-  gulp.src("docs/*.html") // источник
-    .pipe(posthtml([
-        include()
-      ]))
-    .pipe(gulp.dest("docs/")) // класть результат сюда
-    .pipe(server.stream()) // обновление браузера
-  });
+  .pipe(posthtml([ // сборка из разных файлов
+    include()
+    ]))
+  .pipe(gulp.dest("docs/")) // класть результат сюда
+  .pipe(server.stream()) // обновление браузера
+});
 
 gulp.task("watch", function () { // задача - вызывается как скрипт из package.json
-    gulp.watch(["src/blocks/*.{scss, sass}"], function(event, cb) { // отслеживание изменений файлов scss
-       gulp.start("style") // в случае изменений - запуск задачи
-     });
-    gulp.watch(["src/img/**/*"], function(event, cb) { // отслеживание изменений файлов image
-        gulp.start("image"), // в случае изменений - запуск задачи
-        gulp.start("sprite"), // в случае изменений - запуск задачи
-        gulp.start("include") // в случае изменений - запуск задачи
-      });
-    gulp.watch(["src/js/**/*.js"], function(event, cb) { // отслеживание изменений файлов js
-        gulp.start("js") // в случае изменений - запуск задачи
-      });
-    gulp.watch(["src/fonts/**/*.*"], function(event, cb) { // отслеживание изменений файлов js
-        gulp.start("fonts") // в случае изменений - запуск задачи
-      });
-    gulp.watch(["src/blocks/*.html"], function(event, cb) { // отслеживание изменений файлов html
-        gulp.start("html") // в случае изменений - запуск задачи
-      });
+  gulp.watch(["src/blocks/**/*.{scss,sass}"], function(event, cb) { // отслеживание изменений файлов scss
+    gulp.start("style") // в случае изменений - запуск задачи
   });
-
-gulp.task('clean', function (cb) { // задача - вызывается как скрипт из package.json
-    rimraf("docs", cb); // удаление папки build (предыдущая сборка)
+  gulp.watch(["src/img/**/{png,jpg}"], function(event, cb) { // отслеживание изменений файлов image
+    gulp.start("image"), // в случае изменений - запуск задачи
+    gulp.start("sprite") // в случае изменений - запуск задачи
   });
+  gulp.watch(["src/js/**/*.js"], function(event, cb) { // отслеживание изменений файлов js
+    gulp.start("js") // в случае изменений - запуск задачи
+  });
+  gulp.watch(["src/blocks/*.html"], function(event, cb) { // отслеживание изменений файлов html
+    gulp.start("html") // в случае изменений - запуск задачи
+  });
+});
 
 gulp.task ("serve", function() { //задача - вызывается как скрипт из package.json
-    server.init({ // перед запуском start запускается рад задач, затем запускается локальный сервер
-      server: "docs", // адрес к папке где лежит сборка
-      notify: false,
-      open: true,
-      cors: true,
-      host: "192.168.0.91", // дефолтный ip занят virtualbox, задача devip определила запасной ip
-      ui: false
-    });
+  server.init({ // перед запуском start запускается рад задач, затем запускается локальный сервер
+    server: "docs", // адрес к папке где лежит сборка
+    notify: false,
+    open: true,
+    cors: true,
+    host: "192.168.0.91", // дефолтный ip занят virtualbox, задача devip определила запасной ip
+    ui: false
   });
+});
 
 gulp.task ("build", function(done) {
   run (
     "clean",
-    "style",
-    "sprite",
-    "html",
-    "fonts",
-    "js",
+    "copy",
     "image",
     "cwebp",
+    "sprite",
+    "style",
+    "js",
     done
-    )
+  )
 });
 
 gulp.task ("start", function(done) {
   run (
-    "include",
+    "html",
     "serve",
     "watch",
     done
-    )
+  )
 });
+
