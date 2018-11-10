@@ -149,7 +149,7 @@ template {
   display: none; }
 
 .background {
-  background-color: #111217; }
+  background-color: #000000; }
 
 .background--img {
   background-image: url("../img/back.jpg");
@@ -158,27 +158,16 @@ template {
 .main-logo {
   display: block;
   width: 320px;
-  min-height: 250px;
   margin: 0 auto;
-  margin-top: 220px; }
-  .main-logo svg {
-    fill: #c6d2de; }
-  .main-logo:hover svg {
-    cursor: pointer;
-    -webkit-filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3));
-            filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3)); }
-  .main-logo:active svg {
-    opacity: 0.6; }
+  margin-top: 220px;
+  margin-bottom: 30px; }
 
 @media (min-width: 760px) {
-  .main-logo,
-  .main-logo svg {
-    width: 720px;
-    height: 350px; } }
+  .main-logo {
+    width: 720px; } }
 
 @media (min-width: 1440px) {
-  .main-logo,
-  .main-logo svg {
+  .main-logo {
     width: 1400px; } }
 
 @-webkit-keyframes zoomIn {
@@ -388,7 +377,7 @@ template {
   display: none;
   margin-top: 0;
   border-top: 1px solid #cccccc;
-  background-color: #111217; }
+  background-color: #000000; }
 
 .header .navigation-list--nojs,
 .header .navigation-list--open {
@@ -400,8 +389,8 @@ template {
   z-index: 3;
   -webkit-animation-name: slideInDown, fadeIn;
           animation-name: slideInDown, fadeIn;
-  -webkit-animation-duration: 0.3s, 1s;
-          animation-duration: 0.3s, 1s; }
+  -webkit-animation-duration: 0.3s, 0.5s;
+          animation-duration: 0.3s, 0.5s; }
 
 .header .navigation-list__item {
   padding: 30px 0;
@@ -522,7 +511,7 @@ template {
 .news-list__item {
   margin-bottom: 15px;
   border: 1px solid #cccccc;
-  background-color: #111217; }
+  background-color: #000000; }
 
 .news-list__img-link {
   display: block;
@@ -617,7 +606,7 @@ template {
   display: inline-block;
   vertical-align: middle;
   margin: 0;
-  background-color: #111217;
+  background-color: #000000;
   z-index: 2; }
 
 @media (min-width: 760px) {
@@ -676,7 +665,7 @@ template {
 .video-list__item {
   margin-bottom: 15px;
   border: 1px solid #cccccc;
-  background-color: #111217; }
+  background-color: #000000; }
 
 .video-list__wrapper {
   margin: 15px 0; }
@@ -711,7 +700,8 @@ template {
 
 .video-list__youtube {
   display: block;
-  width: 100%; }
+  width: 100%;
+  border: none; }
 
 @media (min-width: 760px) {
   .video-list {
@@ -762,7 +752,7 @@ template {
   margin: 0 auto;
   margin-bottom: 30px;
   border: 1px solid #cccccc;
-  background-color: #111217; }
+  background-color: #000000; }
 
 .artists-list__img-link {
   display: block;
@@ -868,7 +858,7 @@ template {
 .audio-list__item {
   margin-bottom: 15px;
   border: 1px solid #cccccc;
-  background-color: #111217; }
+  background-color: #000000; }
 
 .audio-list__wrapper {
   margin: 15px 0; }
@@ -903,7 +893,8 @@ template {
 
 .audio-list__youtube {
   display: block;
-  width: 100%; }
+  width: 100%;
+  border: none; }
 
 @media (min-width: 760px) {
   .audio-list {

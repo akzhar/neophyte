@@ -1,38 +1,19 @@
 .main-logo { //логотип на стартовой странице
   display: block;
   width: 320px;
-  min-height: 250px; //чтобы блок не схлопнулся, внутри только svg absolute
   margin: 0 auto;
   margin-top: 220px;
-
-  & svg {
-    fill: $white;
-
-    // outline: 1px solid rgba(123, 52, 175, 0.3); //временно для сетки
-    // background-color: rgba(123, 52, 175, 0.3); //временно для сетки
-  }
-
-  &:hover svg {
-    cursor: pointer;
-    filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3));
-  }
-
-  &:active svg {
-    opacity: 0.6;
-  }
+  margin-bottom: 30px;
 }
 
 @media (min-width: $width-1) { //если viewport шире width-1
-  .main-logo,
-  .main-logo svg {
+  .main-logo {
     width: $width-1-40;
-    height: 350px;
   }
 }
 
 @media (min-width: $width-2) { //если viewport шире width-2
-  .main-logo,
-  .main-logo svg {
+  .main-logo {
     width: $width-2-40;
   }
 }
