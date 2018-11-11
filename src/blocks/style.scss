@@ -20,7 +20,6 @@ body {
 
 img {
   max-width: 100%;
-  // height: auto;
 }
 
 @import "variables/variables.scss";
@@ -56,3 +55,5 @@ img {
 @import "artists-list/artists-list.scss";
 
 @import "audio-list/audio-list.scss";
+
+@import "services-list/services-list.scss";

@@ -42,10 +42,14 @@
 }
 
 @media (min-width: $width-1) {
-  .social-btn-list svg {
+  .social-btn-list {
+    margin-top: 100px;
+
+  & svg {
     width: 25px;
     height: 25px;
   }
+}
 }
 
 @media (min-width: $width-2) {

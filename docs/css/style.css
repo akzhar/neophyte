@@ -159,16 +159,34 @@ template {
   display: block;
   width: 320px;
   margin: 0 auto;
-  margin-top: 220px;
+  margin-top: 100px;
   margin-bottom: 30px; }
+  .main-logo:hover svg {
+    -webkit-filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3));
+            filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3)); }
+  .main-logo:active svg {
+    opacity: 0.6; }
+
+.main-logo__main-logo {
+  display: none; }
 
 @media (min-width: 760px) {
   .main-logo {
-    width: 720px; } }
+    width: 720px;
+    margin-top: 150px; }
+  .main-logo svg {
+    width: 720px; }
+  .main-logo__only-logo {
+    display: none; }
+  .main-logo__main-logo {
+    display: block; } }
 
 @media (min-width: 1440px) {
-  .main-logo {
-    width: 1400px; } }
+  .main-logo,
+  .main-logo svg {
+    width: 1400px;
+    margin-top: 50px;
+    height: 400px; } }
 
 @-webkit-keyframes zoomIn {
   0% {
@@ -188,7 +206,7 @@ template {
 
 .popup {
   position: absolute;
-  top: 200px;
+  top: 100px;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
@@ -280,13 +298,14 @@ template {
 @media (min-width: 760px) {
   .navigation-list {
     width: 720px;
-    margin-top: 100px;
+    margin-top: 50px;
     flex-direction: row;
     justify-content: space-between; } }
 
 @media (min-width: 1440px) {
   .navigation-list {
-    width: 1400px; }
+    width: 1400px;
+    margin-top: 100px; }
   .navigation-list__link {
     font-size: 24px;
     line-height: 28px; } }
@@ -322,9 +341,11 @@ template {
     opacity: 0.6; }
 
 @media (min-width: 760px) {
-  .social-btn-list svg {
-    width: 25px;
-    height: 25px; } }
+  .social-btn-list {
+    margin-top: 100px; }
+    .social-btn-list svg {
+      width: 25px;
+      height: 25px; } }
 
 @media (min-width: 1440px) {
   .social-btn-list svg {
@@ -675,7 +696,7 @@ template {
   width: 210px;
   margin: 0 auto 10px auto;
   padding: 10px 0;
-  color: yellow;
+  color: #c6d2de;
   text-decoration: none;
   text-align: center;
   font-size: 18px;
@@ -695,13 +716,17 @@ template {
 
 .video-list__video-item {
   width: 280px;
+  height: 157.5px;
   outline: 1px solid #cccccc;
   margin-bottom: 25px; }
 
-.video-list__youtube {
-  display: block;
+.video-list__video-item iframe {
   width: 100%;
   border: none; }
+
+.youtube {
+  width: 280px;
+  height: 157.5px; }
 
 @media (min-width: 760px) {
   .video-list {
@@ -715,6 +740,8 @@ template {
   .video-list__video-item {
     width: 210px;
     margin: 0 25px 25px 0; }
+  .youtube {
+    width: 210px; }
   .video-list__video-item:nth-child(3n) {
     margin-right: 0; } }
 
@@ -868,7 +895,7 @@ template {
   width: 210px;
   margin: 0 auto 10px auto;
   padding: 10px 0;
-  color: yellow;
+  color: #c6d2de;
   text-decoration: none;
   text-align: center;
   font-size: 18px;
@@ -888,11 +915,11 @@ template {
 
 .audio-list__audio-item {
   width: 280px;
+  height: 157.5px;
   outline: 1px solid #cccccc;
   margin-bottom: 25px; }
 
-.audio-list__youtube {
-  display: block;
+.audio-list__audio-item iframe {
   width: 100%;
   border: none; }
 
@@ -926,3 +953,58 @@ template {
     margin-right: 20px; }
   .audio-list__audio-item:nth-child(6n) {
     margin-right: 0; } }
+
+.services-list {
+  width: 320px;
+  margin: 0 auto;
+  margin-bottom: 40px; }
+
+.services-list__service {
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #cccccc;
+  background-color: #000000; }
+
+.services-list__header {
+  width: 280px;
+  margin: 10px auto;
+  color: #c6d2de;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700; }
+
+.services-list__text {
+  width: 280px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #cccccc;
+  color: #c6d2de; }
+
+.services-list__contacts {
+  width: 280px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  color: yellow; }
+
+@media (min-width: 760px) {
+  .services-list {
+    width: 720px; }
+  .services-list__header,
+  .services-list__text,
+  .services-list__contacts {
+    width: 680px; } }
+
+@media (min-width: 1440px) {
+  .services-list {
+    width: 1400px; }
+  .services-list__header {
+    width: 1360px;
+    font-size: 24px;
+    line-height: 28px; }
+  .services-list__text,
+  .services-list__contacts {
+    width: 1360px;
+    font-size: 22px;
+    line-height: 26px; } }

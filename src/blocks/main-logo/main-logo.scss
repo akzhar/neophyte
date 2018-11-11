@@ -2,18 +2,47 @@
   display: block;
   width: 320px;
   margin: 0 auto;
-  margin-top: 220px;
+  margin-top: 100px;
   margin-bottom: 30px;
+
+  &:hover svg {
+    filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3));
+  }
+
+  &:active svg {
+    opacity: 0.6;
+  }
+}
+
+.main-logo__main-logo {
+  display: none;
 }
 
 @media (min-width: $width-1) { //если viewport шире width-1
   .main-logo {
     width: $width-1-40;
+    margin-top: 150px;
   }
+
+  .main-logo svg {
+    width: $width-1-40;
+  }
+
+  .main-logo__only-logo {
+    display: none;
+  }
+
+  .main-logo__main-logo {
+    display: block;
+  }
+
 }
 
 @media (min-width: $width-2) { //если viewport шире width-2
-  .main-logo {
+  .main-logo,
+  .main-logo svg {
     width: $width-2-40;
+    margin-top: 50px;
+    height: 400px;
   }
 }

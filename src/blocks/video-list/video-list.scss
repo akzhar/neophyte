@@ -35,7 +35,7 @@
   margin: 0 auto 10px auto;
   padding: 10px 0;
 
-  color: $red;
+  color: $white;
   text-decoration: none;
   text-align: center;
   font-size: $font-h1;
@@ -65,14 +65,19 @@
 
 .video-list__video-item {
   width: 280px;
+  height: 157.5px;
   outline: 1px solid $border;
   margin-bottom: 25px;
 }
 
-.video-list__youtube {
-  display: block;
+.video-list__video-item iframe {
   width: 100%;
   border: none;
+}
+
+.youtube {
+  width: 280px;
+  height: 157.5px;
 }
 
 @media (min-width: $width-1) {
@@ -93,6 +98,10 @@
   .video-list__video-item {
     width: 210px;
     margin: 0 25px 25px 0;
+  }
+
+  .youtube {
+    width: 210px;
   }
 
   .video-list__video-item:nth-child(3n) {

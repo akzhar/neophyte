@@ -35,7 +35,7 @@
   margin: 0 auto 10px auto;
   padding: 10px 0;
 
-  color: $red;
+  color: $white;
   text-decoration: none;
   text-align: center;
   font-size: $font-h1;
@@ -65,12 +65,12 @@
 
 .audio-list__audio-item {
   width: 280px;
+  height: 157.5px;
   outline: 1px solid $border;
   margin-bottom: 25px;
 }
 
-.audio-list__youtube {
-  display: block;
+.audio-list__audio-item iframe {
   width: 100%;
   border: none;
 }
