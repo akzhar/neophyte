@@ -5,15 +5,19 @@
   // background-color: rgba(123, 52, 175, 0.3); //временно для сетки
 
   & svg {
+    opacity: 0.8;
+    transition: 2s;
     fill: $white;
   }
 
   &:hover svg {
-    filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3));
+    opacity: 1;
+    transition: 2s;
+    filter: drop-shadow(0 0 15px rgba(198, 210, 222, 0.6));
   }
 
   &:active svg {
-    opacity: 0.6;
+    opacity: 0.3;
   }
 }
 

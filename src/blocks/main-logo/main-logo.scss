@@ -5,12 +5,19 @@
   margin-top: 100px;
   margin-bottom: 30px;
 
+  & svg {
+    opacity: 0.8;
+    transition: 2s;
+  }
+
   &:hover svg {
-    filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3));
+    opacity: 1;
+    transition: 2s;
+    filter: drop-shadow(0 0 15px rgba(198, 210, 222, 0.6));
   }
 
   &:active svg {
-    opacity: 0.6;
+    opacity: 0.3;
   }
 }
 

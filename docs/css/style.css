@@ -161,11 +161,16 @@ template {
   margin: 0 auto;
   margin-top: 100px;
   margin-bottom: 30px; }
+  .main-logo svg {
+    opacity: 0.8;
+    transition: 2s; }
   .main-logo:hover svg {
-    -webkit-filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3));
-            filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3)); }
+    opacity: 1;
+    transition: 2s;
+    -webkit-filter: drop-shadow(0 0 15px rgba(198, 210, 222, 0.6));
+            filter: drop-shadow(0 0 15px rgba(198, 210, 222, 0.6)); }
   .main-logo:active svg {
-    opacity: 0.6; }
+    opacity: 0.3; }
 
 .main-logo__main-logo {
   display: none; }
@@ -456,12 +461,16 @@ template {
 .logo {
   position: relative; }
   .logo svg {
+    opacity: 0.8;
+    transition: 2s;
     fill: #c6d2de; }
   .logo:hover svg {
-    -webkit-filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3));
-            filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3)); }
+    opacity: 1;
+    transition: 2s;
+    -webkit-filter: drop-shadow(0 0 15px rgba(198, 210, 222, 0.6));
+            filter: drop-shadow(0 0 15px rgba(198, 210, 222, 0.6)); }
   .logo:active svg {
-    opacity: 0.6; }
+    opacity: 0.3; }
 
 @media (min-width: 1440px) {
   .logo svg {
