@@ -33,7 +33,8 @@
   pointer-events: none; //отключаем событие клика
   cursor: default; //курсор обычный при наведении
 
-  border-bottom: 3px solid $red;
+  color: $red;
+  filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3));
 }
 
 @media (min-width: $width-1) {

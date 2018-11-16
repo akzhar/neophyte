@@ -162,15 +162,12 @@ template {
   margin-top: 100px;
   margin-bottom: 30px; }
   .main-logo svg {
-    opacity: 0.8;
-    transition: 2s; }
+    opacity: 0.8; }
   .main-logo:hover svg {
-    opacity: 1;
-    transition: 2s;
-    -webkit-filter: drop-shadow(0 0 15px rgba(198, 210, 222, 0.6));
-            filter: drop-shadow(0 0 15px rgba(198, 210, 222, 0.6)); }
+    -webkit-filter: drop-shadow(0 0 6px rgba(198, 210, 222, 0.6));
+            filter: drop-shadow(0 0 6px rgba(198, 210, 222, 0.6)); }
   .main-logo:active svg {
-    opacity: 0.3; }
+    opacity: 0.6; }
 
 .main-logo__main-logo {
   display: none; }
@@ -295,8 +292,10 @@ template {
   font-size: 18px;
   line-height: 22px; }
   .navigation-list__link:hover {
-    border-bottom: 3px solid yellow;
-    transition: border 0.1s; }
+    color: yellow;
+    transition: color 0.5s;
+    -webkit-filter: drop-shadow(0 0 6px rgba(198, 210, 222, 0.6));
+            filter: drop-shadow(0 0 6px rgba(198, 210, 222, 0.6)); }
   .navigation-list__link:active {
     opacity: 0.3; }
 
@@ -319,7 +318,7 @@ template {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 200px;
+  width: 220px;
   margin: 0 auto;
   margin-top: 50px;
   padding: 0;
@@ -340,22 +339,19 @@ template {
   .social-btn-list__link:hover svg {
     fill: yellow;
     transition: fill 0.5s;
-    -webkit-filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3));
-            filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3)); }
+    -webkit-filter: drop-shadow(0 0 6px rgba(198, 210, 222, 0.6));
+            filter: drop-shadow(0 0 6px rgba(198, 210, 222, 0.6)); }
   .social-btn-list__link:active svg {
     opacity: 0.6; }
 
 @media (min-width: 760px) {
   .social-btn-list {
-    margin-top: 100px; }
-    .social-btn-list svg {
-      width: 25px;
-      height: 25px; } }
+    margin-top: 100px; } }
 
 @media (min-width: 1440px) {
   .social-btn-list svg {
-    width: 30px;
-    height: 30px; } }
+    width: 40px;
+    height: 40px; } }
 
 @-webkit-keyframes slideInDown {
   from {
@@ -412,17 +408,22 @@ template {
 .header .navigation-list--open {
   position: absolute;
   top: 130px;
-  z-index: 3;
+  z-index: 2;
   -webkit-animation-name: slideInDown, fadeIn;
           animation-name: slideInDown, fadeIn;
   -webkit-animation-duration: 0.3s, 0.5s;
           animation-duration: 0.3s, 0.5s; }
 
 .header .navigation-list__item {
-  padding: 30px 0;
+  padding: 0;
   margin: 0;
   text-align: center;
   border-bottom: 1px solid #cccccc; }
+
+.header .navigation-list__link {
+  display: block;
+  padding: 40px 0;
+  margin: 0; }
 
 .header--newspage .navigation-list__link--news,
 .header--videopage .navigation-list__link--video,
@@ -431,7 +432,9 @@ template {
 .header--artistspage .navigation-list__link--artists {
   pointer-events: none;
   cursor: default;
-  border-bottom: 3px solid yellow; }
+  color: yellow;
+  -webkit-filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3));
+          filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3)); }
 
 @media (min-width: 760px) {
   .header {
@@ -455,22 +458,20 @@ template {
   .header .navigation-list--open {
     position: static; }
   .header .navigation-list__item {
-    margin: 0 10px;
-    border: none; } }
+    border: none; }
+  .header .navigation-list__link {
+    padding: 0; } }
 
 .logo {
   position: relative; }
   .logo svg {
     opacity: 0.8;
-    transition: 2s;
     fill: #c6d2de; }
   .logo:hover svg {
-    opacity: 1;
-    transition: 2s;
-    -webkit-filter: drop-shadow(0 0 15px rgba(198, 210, 222, 0.6));
-            filter: drop-shadow(0 0 15px rgba(198, 210, 222, 0.6)); }
+    -webkit-filter: drop-shadow(0 0 6px rgba(198, 210, 222, 0.6));
+            filter: drop-shadow(0 0 6px rgba(198, 210, 222, 0.6)); }
   .logo:active svg {
-    opacity: 0.3; }
+    opacity: 0.6; }
 
 @media (min-width: 1440px) {
   .logo svg {
@@ -484,8 +485,7 @@ template {
   margin: 0 auto;
   padding: 0;
   border: none;
-  background-color: transparent;
-  outline: none; }
+  background-color: transparent; }
   .menu-btn:hover {
     cursor: pointer;
     -webkit-filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3));
@@ -636,8 +636,7 @@ template {
   display: inline-block;
   vertical-align: middle;
   margin: 0;
-  background-color: #000000;
-  z-index: 2; }
+  background-color: #000000; }
 
 @media (min-width: 760px) {
   .section-header {
@@ -670,7 +669,9 @@ template {
 .footer--artistspage .navigation-list__link--artists {
   pointer-events: none;
   cursor: default;
-  border-bottom: 3px solid yellow; }
+  color: yellow;
+  -webkit-filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3));
+          filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3)); }
 
 @media (min-width: 760px) {
   .footer {
@@ -792,17 +793,19 @@ template {
 
 .artists-list__img-link {
   display: block;
-  margin: 15px;
-  margin-bottom: auto; }
+  margin: auto;
+  margin-top: 10px;
+  width: 290px; }
 
 .artists-list__description {
-  margin: 15px;
+  width: 290px;
+  margin: auto;
   font-size: 16px;
   line-height: 20px; }
 
 .artists-list__header {
   display: block;
-  margin-bottom: 10px;
+  margin: 10px 0;
   color: yellow;
   text-decoration: none;
   text-transform: uppercase;
@@ -817,7 +820,7 @@ template {
 .artists-list__text {
   margin: 0;
   margin-bottom: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   border-bottom: 1px solid #cccccc;
   color: #c6d2de; }
 
@@ -839,8 +842,8 @@ template {
   .artists-list__link:hover svg {
     fill: yellow;
     transition: fill 0.5s;
-    -webkit-filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3));
-            filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3)); }
+    -webkit-filter: drop-shadow(0 0 6px rgba(198, 210, 222, 0.6));
+            filter: drop-shadow(0 0 6px rgba(198, 210, 222, 0.6)); }
   .artists-list__link:active svg {
     opacity: 0.6; }
 
@@ -862,6 +865,9 @@ template {
   .artists-list__item {
     margin: 0 0 30px 0;
     width: 340px; }
+  .artists-list__img-link,
+  .artists-list__description {
+    width: 320px; }
   .artists-list__link svg {
     width: 25px;
     height: 25px; } }
@@ -871,6 +877,9 @@ template {
     width: 1400px; }
   .artists-list__item {
     width: 680px; }
+  .artists-list__img-link,
+  .artists-list__description {
+    width: 650px; }
   .artists-list__header {
     font-size: 24px;
     line-height: 28px; }

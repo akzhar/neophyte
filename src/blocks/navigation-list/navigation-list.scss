@@ -29,8 +29,9 @@
   line-height: $line-h1;
 
   &:hover {
-    border-bottom: 3px solid $red;
-    transition: border 0.1s;
+    color: $red;
+    transition: color 0.5s;
+    filter: drop-shadow(0 0 6px rgba(198, 210, 222, 0.6));
   }
 
   &:active {

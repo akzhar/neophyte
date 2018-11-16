@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
 
-  width: 200px;
+  width: 220px;
   margin: 0 auto;
   margin-top: 50px;
   padding: 0;
@@ -33,7 +33,7 @@
   &:hover svg {
     fill: $red;
     transition: fill 0.5s;
-    filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3));
+    filter: drop-shadow(0 0 6px rgba(198, 210, 222, 0.6));
   }
 
   &:active svg {
@@ -44,17 +44,12 @@
 @media (min-width: $width-1) {
   .social-btn-list {
     margin-top: 100px;
-
-  & svg {
-    width: 25px;
-    height: 25px;
-  }
 }
 }
 
 @media (min-width: $width-2) {
   .social-btn-list svg {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
   }
 }
