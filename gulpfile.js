@@ -40,7 +40,7 @@ gulp.task('clean', function (cb) { // задача - вызывается как
 
 gulp.task("copy", function () { // задача - вызывается как скрипт из package.json
   gulp.src([  // источник
-    "src/fonts/**/*.*"
+    "src/fonts/**/*.woff"
     ],
     {
       base: "src"
@@ -71,13 +71,15 @@ gulp.task("style", function () { // задача - вызывается как �
 });
 
 gulp.task('js', function () { //задача - вызывается как скрипт из package.json
-  gulp.src("src/js/**/script.js") // источник
+  gulp.src("src/js/**/*.js") // источник
   .pipe(posthtml([ // сборка из разных файлов
     include()
     ]))
   .pipe(gulp.dest("docs/js/")) // класть результат сюда
   .pipe(jsmin()) // минификация
-  .pipe(rename("script.min.js"))
+  .pipe(rename({
+    suffix: ".min"
+  }))
   .pipe(gulp.dest("docs/js/")) // класть результат сюда
   .pipe(server.stream()) // обновление браузера
 });

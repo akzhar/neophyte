@@ -4,19 +4,12 @@
   padding: 40px 0;
 
   color: $white;
-
   font-size: $font-h1;
   line-height: $line-h1;
-
   text-transform: uppercase;
   text-align: center;
 
-  // outline: 1px solid rgba(223, 152, 75, 0.3); //временно для сетки
-  // background-color: rgba(223, 152, 75, 0.3); //временно для сетки
-
   &::before {
-    content: "";
-
     position: absolute;
     top: 50%;
     left: 0;
@@ -26,20 +19,19 @@
     height: 3px;
 
     background-color: $red;
+
+    content: "";
   }
 }
 
 .section-header__head {
   position: relative;
-
   display: inline-block;
   vertical-align: middle;
 
   margin: 0;
 
   background-color: $back;
-
-  // z-index: 2;
 }
 
 @media (min-width: $width-1) {

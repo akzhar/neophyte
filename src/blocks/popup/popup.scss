@@ -58,14 +58,14 @@
   &::after {
     position: absolute;
     left: 50%;
+    transform: translate(-50%, 0); //центруется
 
     width: 30px; //размеры полосок
     height: 2px;
+
     background-color: $white;
 
     content: "";
-
-    transform: translate(-50%, 0); //центруется
   }
 
     &::before { //верхняя полоска
@@ -77,12 +77,10 @@
     bottom: 29px; //смещается вверх
     transform: translate(-50%, 0) rotate(45deg); //центруется и поворачивается
   }
-
 }
 
 .popup__description {
-  padding: 15px;
-  padding-top: 50px;
+  padding: 50px 15px 15px 15px;
 }
 
 .popup__text {

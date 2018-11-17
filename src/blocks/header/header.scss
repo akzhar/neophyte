@@ -51,6 +51,7 @@
   align-items: center;
 
   width: $width-0;
+
   margin: 0 auto;
   padding-top: 20px; //чтобы не прилипало к верхнему краю
 
@@ -64,6 +65,7 @@
 
 .header .navigation-list {
   display: none; // в мобилке меню в шапке по умолчанию скрыто
+
   margin-top: 0;
 
   border-top: 1px solid $border;
@@ -78,7 +80,9 @@
 .header .navigation-list--open { //анимация при открытии меню
   position: absolute;
   top: 130px;
+
   z-index: 2;
+
   animation-name: slideInDown, fadeIn;
   animation-duration: 0.3s, 0.5s;
 }
@@ -94,8 +98,9 @@
 
 .header .navigation-list__link {
   display: block;
-  padding: 40px 0;
+
   margin: 0;
+  padding: 40px 0;
 }
 
 .header--newspage .navigation-list__link--news,
@@ -105,7 +110,6 @@
 .header--artistspage .navigation-list__link--artists { //на странице news у элемента news
   pointer-events: none; //отключаем событие клика
   cursor: default; //курсор обычный при наведении
-
   color: $red;
   filter: drop-shadow(0 0 5px rgba(198, 210, 222, 0.3));
 }
@@ -113,6 +117,7 @@
 @media (min-width: $width-1) {
   .header {
     width: $width-1-40;
+
     padding-bottom: 20px; //чтобы не прилипало к нижнему краю
   }
 
@@ -128,6 +133,7 @@
 @media (min-width: $width-2) {
   .header {
     flex-wrap: nowrap;
+
     width: $width-2-40;
   }
 

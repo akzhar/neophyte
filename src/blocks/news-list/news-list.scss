@@ -1,20 +1,13 @@
 .news-list {
   width: $width-0;
   margin: 0 auto;
-
-  // outline: 1px solid rgba(123, 52, 175, 0.3); //временно для сетки
-  // background-color: rgba(123, 52, 175, 0.3); //временно для сетки
 }
 
 .news-list__list {
   margin: 0; //чтобы не было зазора у футера
-  padding: 0;
-  padding-bottom: 10px; //чтобы отступ последней новости не вываливался за контейнер
+  padding: 0 0 10px 0; //чтобы отступ последней  не вываливался за контейнер
 
   list-style: none;
-
-  // outline: 1px solid rgba(173, 152, 225, 0.3); //временно для сетки
-  // background-color: rgba(173, 152, 225, 0.3); //временно для сетки
 }
 
 .news-list__item {
@@ -27,8 +20,10 @@
 
 .news-list__img-link {
   display: block;
+
   min-width: 280px;
   max-width: 280px;
+
   margin: 15px;
 
   border-bottom: 1px solid $border;
@@ -40,22 +35,17 @@
 
   font-size: $font-p1;
   line-height: $line-p1;
-
-  // outline: 1px solid rgba(173, 152, 225, 0.3); //временно для сетки
-  // background-color: rgba(173, 152, 225, 0.3); //временно для сетки
 }
 
 .news-list__time {
   position: relative;
+
   display: block;
 
-  padding-left: 40px;
   margin-bottom: 10px;
+  padding-left: 40px;
 
   color: $red;
-
-  // outline: 1px solid rgba(103, 102, 225, 0.3); //временно для сетки
-  // background-color: rgba(103, 102, 225, 0.3); //временно для сетки
 
   &::after {
     position: absolute;
@@ -75,19 +65,15 @@
 
 .news-list__header {
   display: block;
+
   margin-bottom: 10px;
 
   color: $white;
   text-decoration: none;
+  text-transform: uppercase;
   font-size: $font-h1;
   line-height: $line-h1;
   font-weight: 700;
-
-  text-transform: uppercase;
-
-  // outline: 1px solid rgba(113, 112, 215, 0.3); //временно для сетки
-  // background-color: rgba(113, 112, 215, 0.3); //временно для сетки
-
 
   &:hover {
     opacity: 0.6;
@@ -102,9 +88,6 @@
   margin: 0;
 
   color: $white;
-
-  // outline: 1px solid rgba(113, 112, 215, 0.3); //временно для сетки
-  // background-color: rgba(113, 112, 215, 0.3); //временно для сетки
 }
 
 @media (min-width: $width-1) {

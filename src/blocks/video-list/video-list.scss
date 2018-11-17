@@ -1,15 +1,12 @@
 .video-list {
   width: $width-0;
-  margin: 0 auto;
 
-  // outline: 1px solid rgba(173, 152, 225, 0.3); //временно для сетки
-  // background-color: rgba(173, 152, 225, 0.3); //временно для сетки
+  margin: 0 auto;
 }
 
 .video-list__list {
   margin: 0;
-  padding: 0;
-  padding-bottom: 10px; //чтобы отступ последней новости не вываливался за контейнер
+  padding: 0 0 10px 0; //чтобы отступ последней не вываливался за контейнер
 
   list-style: none;
 }
@@ -24,28 +21,23 @@
 
 .video-list__wrapper { //обертка для заголовка и видео
   margin: 15px 0;
-
-  // outline: 1px solid rgba(73, 52, 25, 0.3); //временно для сетки
-  // background-color: rgba(73, 52, 25, 0.3); //временно для сетки
 }
 
 .video-list__header {
   display: block;
+
   width: 210px;
+
   margin: 0 auto 10px auto;
   padding: 10px 0;
 
   color: $white;
   text-decoration: none;
+  text-transform: uppercase;
   text-align: center;
   font-size: $font-h1;
   line-height: $line-h1;
   font-weight: 700;
-
-  text-transform: uppercase;
-
-  // outline: 1px solid rgba(22, 252, 225, 0.3); //временно для сетки
-  // background-color: rgba(22, 252, 225, 0.3); //временно для сетки
 
   &:hover {
     opacity: 0.6;
@@ -58,20 +50,25 @@
 
 .video-list__video {
   width: 280px;
+
   margin: 0 auto;
   padding: 0;
+
   list-style: none;
 }
 
 .video-list__video-item {
   width: 280px;
   height: 157.5px;
-  outline: 1px solid $border;
+
   margin-bottom: 25px;
+
+  outline: 1px solid $border;
 }
 
 .video-list__video-item iframe {
   width: 100%;
+
   border: none;
 }
 
@@ -92,11 +89,13 @@
   .video-list__video {
     display: flex;
     flex-wrap: wrap;
+
     width: 680px;
   }
 
   .video-list__video-item {
     width: 210px;
+
     margin: 0 25px 25px 0;
   }
 
@@ -116,6 +115,7 @@
 
   .video-list__header {
     width: 500px;
+
     font-size: $font-h3;
     line-height: $line-h3;
   }

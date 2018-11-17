@@ -4,5 +4,11 @@
 
 .background--img {
   background-image: url("../img/back.jpg");
+  background-image:
+  -webkit-image-set(
+    url("../img/back.webp") 1x);
+  background-image:
+  image-set(
+    url("../img/back.webp") 1x);
   background-position-x: 20%;
 }
