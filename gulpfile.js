@@ -19,6 +19,7 @@ devip = require('dev-ip'),
 svgstore = require('gulp-svgstore'),
 posthtml = require('gulp-posthtml'),
 include = require('posthtml-include'),
+htmlmin = require('gulp-htmlmin'),
 run = require('run-sequence'),
 rename = require("gulp-rename");
 
@@ -48,12 +49,50 @@ gulp.task("copy", function () { // задача - вызывается как с
   .pipe(gulp.dest("docs/")); // класть результат сюда
 });
 
-gulp.task("sprite", function () { // задача - вызывается как скрипт из package.json
-  gulp.src("src/img/sprite/inline-*.svg") // источник
+gulp.task("sprite1", function () { // задача - вызывается как скрипт из package.json
+  gulp.src("src/img/sprite1/inline-*.svg") // источник
+  .pipe(imagemin([
+    imageminSvgo({ // сжатие svg
+      plugins: [
+      {removeDimensions: true},
+      {removeAttrs: true},
+      {removeElementsByAttr: true},
+      {removeStyleElement: true},
+      {removeViewBox: false}
+      ]
+    })
+    ]))
   .pipe(svgstore({
     inlineSvg: true
   }))
-  .pipe(rename("sprite.svg"))
+  .pipe(rename({
+    basename: "sprite1",
+    suffix: ".min"
+  }))
+  .pipe(gulp.dest("docs/img/")) // класть результат сюда
+  .pipe(server.stream()) // обновление браузера
+});
+
+gulp.task("sprite2", function () { // задача - вызывается как скрипт из package.json
+  gulp.src("src/img/sprite2/inline-*.svg") // источник
+  .pipe(imagemin([
+    imageminSvgo({ // сжатие svg
+      plugins: [
+      {removeDimensions: true},
+      {removeAttrs: true},
+      {removeElementsByAttr: true},
+      {removeStyleElement: true},
+      {removeViewBox: false}
+      ]
+    })
+    ]))
+  .pipe(svgstore({
+    inlineSvg: true
+  }))
+  .pipe(rename({
+    basename: "sprite2",
+    suffix: ".min"
+  }))
   .pipe(gulp.dest("docs/img/")) // класть результат сюда
   .pipe(server.stream()) // обновление браузера
 });
@@ -65,7 +104,9 @@ gulp.task("style", function () { // задача - вызывается как �
   .pipe(autoprefixer()) // расставление автопрефиксов
   .pipe(gulp.dest("docs/css/")) // класть результат сюда
   .pipe(cleanCSS()) // минификация
-  .pipe(rename("style.min.css"))
+  .pipe(rename({
+    suffix: ".min"
+  }))
   .pipe(gulp.dest("docs/css/")) // класть результат сюда
   .pipe(server.stream()) // обновление браузера
 });
@@ -101,9 +142,9 @@ gulp.task("image", function () { // задача - вызывается как �
       {removeElementsByAttr: true},
       {removeStyleElement: true},
       {removeViewBox: false}
-    ]
+      ]
     })
-  ]))
+    ]))
   .pipe(gulp.dest("docs/img/")) // класть результат сюда
   .pipe(server.stream()) // обновление браузера
 });
@@ -119,6 +160,7 @@ gulp.task("html", function () { // задача - вызывается как с
   .pipe(posthtml([ // сборка из разных файлов
     include()
     ]))
+  .pipe(htmlmin({ collapseWhitespace: true })) // минификация
   .pipe(gulp.dest("docs/")) // класть результат сюда
   .pipe(server.stream()) // обновление браузера
 });
@@ -159,11 +201,12 @@ gulp.task ("build", function(done) {
     "copy",
     "image",
     "cwebp",
-    "sprite",
+    "sprite1",
+    "sprite2",
     "style",
     "js",
     done
-  )
+    )
 });
 
 gulp.task ("start", function(done) {
@@ -172,6 +215,6 @@ gulp.task ("start", function(done) {
     "serve",
     "watch",
     done
-  )
+    )
 });
 

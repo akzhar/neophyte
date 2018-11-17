@@ -15,11 +15,14 @@
     "clean": "gulp clean",
     "cwebp": "gulp cwebp",
     "copy": "gulp copy",
-    "sprite": "gulp sprite",
+    "sprite1": "gulp sprite1",
+    "sprite2": "gulp sprite2",
     "serve": "gulp serve",
     "lint": "gulp lint"
   },
-  "dependencies": {},
+  "dependencies": {
+    "gulp-htmlmin": "^5.0.1"
+  },
   "devDependencies": {
     "browser-sync": "^2.26.3",
     "dev-ip": "^1.0.1",
