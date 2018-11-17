@@ -13,7 +13,6 @@
 .artists-list__item {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
 
   width: 318px;
   margin: 0 auto 30px auto;
@@ -26,12 +25,12 @@
   display: block;
 
   width: 290px;
-  margin: 10px auto auto auto;
+  margin: 15px auto auto auto;
 }
 
 .artists-list__description { //обертка для даты, заголовка и текста
   width: 290px;
-  margin: auto;
+  margin: auto auto 0 auto;
 
   font-size: $font-p1;
   line-height: $line-p1;
