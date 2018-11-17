@@ -70,6 +70,11 @@
   border: none;
 }
 
+.youtube {
+  width: 280px;
+  height: 157.5px;
+}
+
 @media (min-width: $width-1) {
   .audio-list {
     width: $width-1-40;
@@ -94,6 +99,10 @@
 
   .audio-list__audio-item:nth-child(3n) {
     margin-right: 0;
+  }
+
+   .youtube {
+    width: 210px;
   }
 }
 

@@ -31,7 +31,7 @@ var v=document.getElementsByClassName("youtube");
 if(v.length>0) {
   s=document.createElement("style");
   s.type="text/css";
-  s.innerHTML='.youtube{background-color:#000;max-width:100%;overflow:hidden;position:relative;cursor:hand;cursor:pointer}.youtube .thumb{bottom:0;display:block;left:0;margin:auto;max-width:100%;position:absolute;right:0;top:0;width:100%;height:auto}.youtube .play{filter:alpha(opacity=80);opacity:.8;height:77px;left:50%;margin-left:-38px;margin-top:-38px;position:absolute;top:50%;width:77px;background:url("img/play.png") no-repeat}';
+  s.innerHTML='.youtube{background-color:#000;max-width:100%;overflow:hidden;position:relative;cursor:pointer}.youtube .thumb{bottom:0;display:block;left:0;margin:auto;max-width:100%;position:absolute;right:0;top:0;width:100%;height:auto}.youtube .play{filter:alpha(opacity=80);opacity:.8;height:77px;left:50%;margin-left:-38px;margin-top:-38px;position:absolute;top:50%;width:77px;background:url("img/play.png") no-repeat}';
   document.body.appendChild(s);
 }
 

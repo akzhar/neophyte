@@ -535,6 +535,10 @@ template {
   width: 100%;
   border: none; }
 
+.youtube {
+  width: 280px;
+  height: 157.5px; }
+
 @media (min-width: 760px) {
   .audio-list {
     width: 720px; }
@@ -548,7 +552,9 @@ template {
     width: 210px;
     margin: 0 25px 25px 0; }
   .audio-list__audio-item:nth-child(3n) {
-    margin-right: 0; } }
+    margin-right: 0; }
+  .youtube {
+    width: 210px; } }
 
 @media (min-width: 1440px) {
   .audio-list {
