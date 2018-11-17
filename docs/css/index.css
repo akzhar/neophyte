@@ -268,6 +268,37 @@ template {
     font-size: 22px;
     line-height: 26px; } }
 
+.section-header {
+  position: relative;
+  padding: 40px 0;
+  color: #c6d2de;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+  text-align: center; }
+  .section-header::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    width: 100%;
+    height: 3px;
+    background-color: yellow;
+    content: ""; }
+
+.section-header__head {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  background-color: #000000; }
+
+@media (min-width: 760px) {
+  .section-header {
+    font-size: 24px;
+    line-height: 28px; } }
+
 .navigation-list {
   display: flex;
   flex-wrap: wrap;
