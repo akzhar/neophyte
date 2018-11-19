@@ -609,7 +609,6 @@ template {
 .artists-list__item {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   width: 318px;
   margin: 0 auto 30px auto;
   border: 1px solid #cccccc;
@@ -618,11 +617,11 @@ template {
 .artists-list__img-link {
   display: block;
   width: 290px;
-  margin: 10px auto auto auto; }
+  margin: 15px auto auto auto; }
 
 .artists-list__description {
   width: 290px;
-  margin: auto;
+  margin: auto auto 0 auto;
   font-size: 16px;
   line-height: 20px; }
 
