@@ -2,6 +2,7 @@
   font-weight: normal;
   font-family: "Roboto";
   font-style: normal;
+  font-display: optional;
   src: url("../fonts/Roboto-Regular.woff") format("woff");
 }
 
@@ -29,6 +30,12 @@ img {
 
 @import "background/background.scss";
 
+@import "main-logo/main-logo.scss";
+
+@import "popup/popup.scss";
+
+@import "section-header/section-header.scss";
+
 @import "navigation-list/navigation-list.scss";
 
 @import "social-btn-list/social-btn-list.scss";
@@ -39,8 +46,12 @@ img {
 
 @import "menu-btn/menu-btn.scss";
 
-@import "section-header/section-header.scss";
-
 @import "footer/footer.scss";
+
+@import "artists-list/artists-list.scss";
+
+@import "video-list/video-list.scss";
+
+@import "news-list/news-list.scss";
 
 @import "services-list/services-list.scss";
