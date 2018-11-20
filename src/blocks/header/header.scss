@@ -1,29 +1,3 @@
-@-webkit-keyframes slideInDown {
-  from {
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-    visibility: visible;
-  }
-
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideInDown {
-  from {
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-    visibility: visible;
-  }
-
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
@@ -80,11 +54,13 @@
 .header .navigation-list--open { //анимация при открытии меню
   position: absolute;
   top: 130px;
+  left: 50%;
+  transform: translate(-50%, 0px);
 
   z-index: 2;
 
-  animation-name: slideInDown, fadeIn;
-  animation-duration: 0.3s, 0.5s;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
 }
 
 .header .navigation-list__item {

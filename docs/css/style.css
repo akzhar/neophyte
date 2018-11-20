@@ -382,24 +382,6 @@ template {
     width: 35px;
     height: 35px; } }
 
-@-webkit-keyframes slideInDown {
-  from {
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-    visibility: visible; }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0); } }
-
-@keyframes slideInDown {
-  from {
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-    visibility: visible; }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0); } }
-
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0; }
@@ -437,11 +419,14 @@ template {
 .header .navigation-list--open {
   position: absolute;
   top: 130px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0px);
+          transform: translate(-50%, 0px);
   z-index: 2;
-  -webkit-animation-name: slideInDown, fadeIn;
-          animation-name: slideInDown, fadeIn;
-  -webkit-animation-duration: 0.3s, 0.5s;
-          animation-duration: 0.3s, 0.5s; }
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s; }
 
 .header .navigation-list__item {
   padding: 0;
@@ -617,7 +602,8 @@ template {
 .artists-list__img-link {
   display: block;
   width: 290px;
-  margin: 15px auto auto auto; }
+  margin: 15px auto auto auto;
+  flex-shrink: 0; }
 
 .artists-list__description {
   width: 290px;
@@ -826,7 +812,7 @@ template {
   position: relative;
   display: block;
   margin-bottom: 10px;
-  padding-left: 40px;
+  padding-left: 30px;
   color: yellow; }
   .news-list__time::after {
     position: absolute;
@@ -834,8 +820,8 @@ template {
     left: 0;
     -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%);
-    width: 25px;
-    height: 25px;
+    width: 18px;
+    height: 18px;
     content: "";
     background-image: url("../img/watch.svg");
     background-repeat: no-repeat; }
