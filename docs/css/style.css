@@ -3,7 +3,7 @@
   font-family: "Roboto";
   font-style: normal;
   font-display: optional;
-  src: url("../fonts/Roboto-Regular.woff") format("woff"); }
+  src: url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff"); }
 
 html {
   height: 100%; }
@@ -286,6 +286,8 @@ template {
     width: 100%;
     height: 3px;
     background-color: yellow;
+    -webkit-filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.6));
+            filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.6));
     content: ""; }
 
 .section-header__head {
@@ -324,8 +326,8 @@ template {
   .navigation-list__link:hover {
     color: yellow;
     transition: color 0.5s;
-    -webkit-filter: drop-shadow(0 0 6px rgba(198, 210, 222, 0.6));
-            filter: drop-shadow(0 0 6px rgba(198, 210, 222, 0.6)); }
+    -webkit-filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.6));
+            filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.6)); }
   .navigation-list__link:active {
     opacity: 0.3; }
 
@@ -368,8 +370,8 @@ template {
   .social-btn-list__link:hover svg {
     fill: yellow;
     transition: fill 0.5s;
-    -webkit-filter: drop-shadow(0 0 6px rgba(198, 210, 222, 0.6));
-            filter: drop-shadow(0 0 6px rgba(198, 210, 222, 0.6)); }
+    -webkit-filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.6));
+            filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.6)); }
   .social-btn-list__link:active svg {
     opacity: 0.6; }
 

@@ -19,6 +19,7 @@
     height: 3px;
 
     background-color: $red;
+    filter: drop-shadow(0 0 6px $gold);
 
     content: "";
   }

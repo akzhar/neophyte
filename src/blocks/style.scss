@@ -3,7 +3,8 @@
   font-family: "Roboto";
   font-style: normal;
   font-display: optional;
-  src: url("../fonts/Roboto-Regular.woff") format("woff");
+  src: url("../fonts/Roboto-Regular.woff2") format("woff2"),
+  url("../fonts/Roboto-Regular.woff") format("woff");
 }
 
 html {

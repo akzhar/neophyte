@@ -27,7 +27,7 @@ devip(); // [ "192.168.1.76", "192.168.1.80" ] or false if nothing found (ie, of
 
 gulp.task('lint', function lintCssTask() { // задача - вызывается как скрипт из package.json
   return gulp
-  .src("src/blocks/*.{scss, sass}") // источник
+  .src("src/blocks/*.{scss,sass}") // источник
   .pipe(gulpStylelint({
     reporters: [
     {formatter: 'string', console: true}
@@ -41,7 +41,7 @@ gulp.task('clean', function (cb) { // задача - вызывается как
 
 gulp.task("copy", function () { // задача - вызывается как скрипт из package.json
   gulp.src([  // источник
-    "src/fonts/**/*.woff"
+    "src/fonts/**/*.{woff,woff2}"
     ],
     {
       base: "src"

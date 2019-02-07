@@ -29,7 +29,7 @@
   &:hover {
     color: $red;
     transition: color 0.5s;
-    filter: drop-shadow(0 0 6px rgba(198, 210, 222, 0.6));
+    filter: drop-shadow(0 0 6px $gold);
   }
 
   &:active {
